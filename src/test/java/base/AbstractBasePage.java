@@ -1,6 +1,7 @@
 package base;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,6 +19,7 @@ abstract public class AbstractBasePage {
     protected WebDriver driver;
     protected static WebDriverWait wait;
     private int BASE_WAIT = 15000;
+
     public AbstractBasePage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, ofMillis(BASE_WAIT));
@@ -40,7 +42,6 @@ abstract public class AbstractBasePage {
         return wait.until(presenceOfAllElementsLocatedBy(By.xpath(locator)));
     }
 
-
     public void goToNextTab(int tabNumber) {
         waitUntilNumberOfTabToBe(tabNumber);
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
@@ -49,5 +50,15 @@ abstract public class AbstractBasePage {
 
     public void waitUntilNumberOfTabToBe(int tabNumber) {
         wait.until(ExpectedConditions.numberOfWindowsToBe(tabNumber));
+    }
+
+    public static void scrollForElement(WebElement element, WebDriver driver) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public void moveToNextPage() {
+        ArrayList<String> switchToWindow = new ArrayList<>
+                (driver.getWindowHandles());
+        driver.switchTo().window(switchToWindow.get(1));
     }
 }

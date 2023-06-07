@@ -13,7 +13,7 @@ abstract public class AbstractBaseTest {
     public void openWindow() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://www.bmwusa.com");
+        driver.get("https://us.puma.com/us/en");
     }
 
     @AfterMethod
