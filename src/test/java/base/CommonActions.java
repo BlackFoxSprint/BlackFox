@@ -21,7 +21,7 @@ public class CommonActions {
         driver.navigate().back();
     }
 
-    protected void moveCursor(WebElement element, WebDriver driver) {
+    public static void moveCursor(WebElement element, WebDriver driver) {
         Actions actions = new Actions(driver);
         actions.moveToElement(element).build().perform();
     }
