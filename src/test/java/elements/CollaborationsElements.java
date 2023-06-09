@@ -3,8 +3,8 @@ package elements;
 import base.AbstractBasePage;
 import org.openqa.selenium.WebDriver;
 
-public class ShopAllMenElements extends AbstractBasePage {
-    public ShopAllMenElements(WebDriver driver) {
+public class CollaborationsElements extends AbstractBasePage {
+    public CollaborationsElements(WebDriver driver) {
         super(driver);
     }
 }

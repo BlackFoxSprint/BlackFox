@@ -3,8 +3,8 @@ package pages;
 import base.AbstractBasePage;
 import org.openqa.selenium.WebDriver;
 
-public class ShopAllMensPage extends AbstractBasePage {
-    public ShopAllMensPage(WebDriver driver) {
+public class KidsPage extends AbstractBasePage {
+    public KidsPage(WebDriver driver) {
         super(driver);
     }
 }
