@@ -12,12 +12,12 @@ import static org.testng.AssertJUnit.assertTrue;
 
 public class SpongeBobTest extends AbstractBaseTest {
 
-        @Test
-        public void CheckSpongeBobCollection() {
+    @Test
+    public void CheckSpongeBobCollection() {
 
-        HomePage homePage=new HomePage(driver);
-        ProductPage productPage=new ProductPage(driver);
-        Actions actions=new Actions(driver);
+        HomePage homePage = new HomePage(driver);
+        ProductPage productPage = new ProductPage(driver);
+        Actions actions = new Actions(driver);
 
         homePage.modalWindowClose().click();
         homePage.cookiesDismiss().click();
@@ -28,36 +28,36 @@ public class SpongeBobTest extends AbstractBaseTest {
 
         assertTrue(getURL().contains("spongebob"));
 
-        for (WebElement x: productPage.listProductNames())
-                assertTrue(x.getText().contains("SPONGEBOB"));
+        for (WebElement x : productPage.listProductNames())
+            assertTrue(x.getText().contains("SPONGEBOB"));
 
         homePage.searchField().click();
 
-        actions.sendKeys(homePage.searchInputField(),"PUMA x SPONGEBOB").build().perform();
+        actions.sendKeys(homePage.searchInputField(), "PUMA x SPONGEBOB").build().perform();
         homePage.searchBtn().click();
 
-        for (WebElement x: productPage.listProductNames())
-                assertTrue(x.getText().contains("SPONGEBOB"));
+        for (WebElement x : productPage.listProductNames())
+            assertTrue(x.getText().contains("SPONGEBOB"));
 
         productPage.filterBtn().click();
         productPage.genderBtn().click();
         productPage.girlsCategory().click();
 
-        for (WebElement x: productPage.listProductNames())
-                assertTrue(x.getText().contains("SPONGEBOB"));
+        for (WebElement x : productPage.listProductNames())
+            assertTrue(x.getText().contains("SPONGEBOB"));
 
         productPage.girlsCategory().click();
         productPage.menCategory().click();
 
-        for (WebElement x: productPage.listProductNames())
-                assertTrue(x.getText().contains("SPONGEBOB"));
+        for (WebElement x : productPage.listProductNames())
+            assertTrue(x.getText().contains("SPONGEBOB"));
 
         productPage.menCategory().click();
         productPage.unisexCategory().click();
 
-        for (WebElement x: productPage.listProductNames())
-                assertTrue(x.getText().contains("SPONGEBOB"));
+        for (WebElement x : productPage.listProductNames())
+            assertTrue(x.getText().contains("SPONGEBOB"));
 
         productPage.unisexCategory().click();
-        }
+    }
 }

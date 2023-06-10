@@ -15,6 +15,4 @@ public class ProductPageElements extends AbstractBasePage {
     public static final String GIRLS_CATEGORY = "//input[@id='Girls']";
     public static final String MEN_CATEGORY = "//input[@id='Men']";
     public static final String UNISEX_CATEGORY = "//input[@id='Unisex']";
-//    public static final String  = "";
-
 }
