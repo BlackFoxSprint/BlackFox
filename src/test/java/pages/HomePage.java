@@ -17,6 +17,30 @@ public class HomePage extends HomeElements {
         return waitUntilElementToBeVisibleByXpath("//a[@data-link-name='Men']");
     }
 
+    public WebElement collaborationBtn() {
+        return waitUntilElementToBeVisibleByXpath(COLLABORATION_BTN);
+    }
+
+    public WebElement searchField() {
+        return waitUntilElementToBeVisibleByXpath(SEARCH_FIELD);
+    }
+
+    public WebElement searchInputField() {
+        return waitUntilPresenceOfElementByXpath(SEARCH_INPUT_FIELD);
+    }
+
+    public WebElement searchBtn() {
+        return waitUntilElementToBeVisibleByXpath(SEARCH_BTN);
+    }
+
+    public WebElement cookiesDismiss() {
+        return waitUntilElementToBeVisibleByXpath(COOKIES_DISMISS);
+    }
+
+    public WebElement modalWindowClose() {
+        return waitUntilElementToBeClickableByXpath(MODAL_WINDOW_CLOSE);
+    }
+
     public WebElement getKidsCategory() {
         return waitUntilElementToBeVisibleByXpath("//a[@data-link-name='Kids']");
     }
