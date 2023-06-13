@@ -21,24 +21,28 @@ public class HomePage extends HomeElements {
         return waitUntilElementToBeVisibleByXpath(COLLABORATION_BTN);
     }
 
-    public WebElement searchField() {
-        return waitUntilElementToBeVisibleByXpath(SEARCH_FIELD);
+    public HomePage clickSearchField() {
+        waitUntilElementToBeVisibleByXpath(SEARCH_FIELD).click();
+        return this;
     }
 
     public WebElement searchInputField() {
         return waitUntilPresenceOfElementByXpath(SEARCH_INPUT_FIELD);
     }
 
-    public WebElement searchBtn() {
-        return waitUntilElementToBeVisibleByXpath(SEARCH_BTN);
+    public HomePage clickSearchBtn() {
+        waitUntilElementToBeVisibleByXpath(SEARCH_BTN).click();
+        return this;
     }
 
-    public WebElement cookiesDismiss() {
-        return waitUntilElementToBeVisibleByXpath(COOKIES_DISMISS);
+    public HomePage clickCookiesDismiss() {
+        waitUntilElementToBeVisibleByXpath(COOKIES_DISMISS).click();
+        return this;
     }
 
-    public WebElement modalWindowClose() {
-        return waitUntilElementToBeClickableByXpath(MODAL_WINDOW_CLOSE);
+    public HomePage clickModalWindowClose() {
+        waitUntilElementToBeClickableByXpath(MODAL_WINDOW_CLOSE).click();
+        return this;
     }
 
     public WebElement getKidsCategory() {
@@ -54,5 +58,3 @@ public class HomePage extends HomeElements {
         return this;
     }
 }
-
-

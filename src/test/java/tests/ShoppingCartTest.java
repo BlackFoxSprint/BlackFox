@@ -12,7 +12,7 @@ public class ShoppingCartTest extends AbstractBaseTest {
         HomePage homePage =new HomePage(driver);
         WomensPage womensPage = new WomensPage(driver);
 
-//        CommonActions.moveCursor(homePage.getWomenCategory(), driver);
+        CommonActions.moveCursor(homePage.getWomenCategory(), driver);
 
         homePage
                 .clickClassicsWomenShoes();
