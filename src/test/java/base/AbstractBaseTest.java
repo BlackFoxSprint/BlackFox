@@ -16,10 +16,10 @@ abstract public class AbstractBaseTest {
         driver.get("https://us.puma.com/us/en");
     }
 
-//    @AfterMethod
-//    public void closeWindow() {
-//        driver.quit();
-//    }
+    @AfterMethod
+    public void closeWindow() {
+        driver.quit();
+    }
 
     public WebDriver getDriver() {
         return driver;
