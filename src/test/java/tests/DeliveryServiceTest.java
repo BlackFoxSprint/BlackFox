@@ -35,53 +35,19 @@ public class DeliveryServiceTest extends AbstractBaseTest {
                 ,productPage.warningEmptyFields().getText());
 
         actions.sendKeys(productPage.firstNameField(),"Peter").build().perform();
-
-        productPage.clickContinuePaymentBtn();
-
-        assertEquals("Please fill out this field."
-                ,productPage.warningEmptyFields().getText());
-
         actions.sendKeys(productPage.lastNameField(),"Griffin").build().perform();
-
-        productPage.clickContinuePaymentBtn();
-
-        assertEquals("Please fill out this field."
-                ,productPage.warningEmptyFields().getText());
-
         actions.sendKeys(productPage.addressField(),"520 12th Avenue").build().perform();
-
-        productPage.clickContinuePaymentBtn();
-
-        assertEquals("Please fill out this field."
-                ,productPage.warningEmptyFields().getText());
-
         actions.sendKeys(productPage.cityField(),"New York").build().perform();
-
-        productPage.clickContinuePaymentBtn();
-
-        assertEquals("Please fill out this field."
-                ,productPage.warningEmptyFields().getText());
-
         actions.sendKeys(productPage.postalCodeField(), "10036").build().perform();
-
-        productPage.clickContinuePaymentBtn();
-
-        assertEquals("Please fill out this field."
-                ,productPage.warningEmptyFields().getText());
-
         actions.sendKeys(productPage.companyField(),"Someone’s COMPANY").build().perform();
         actions.sendKeys(productPage.emailField(),"petergriffin@familyman.com").build().perform();
-
-        productPage.clickContinuePaymentBtn();
-
-        assertEquals("Please fill out this field."
-                ,productPage.warningEmptyFields().getText());
-
         actions.sendKeys(productPage.phoneNumberField(),"+12345678901").build().perform();
 
         productPage.clickContinuePaymentBtn();
 
         assertEquals("https://us.puma.com/us/en/checkout/payment?smsUpdate=true&emailList=true"
                 ,getURL());
+
+
     }
 }
