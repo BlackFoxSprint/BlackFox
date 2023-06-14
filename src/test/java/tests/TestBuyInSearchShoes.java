@@ -35,7 +35,7 @@ public class TestBuyInSearchShoes extends AbstractBaseTest {
     }
 
     @Test
-    public void testWomenPage() {
+    public void testPumaPage() {
         openBmwPage();
 
         HomePage homePage = new HomePage(driver);
@@ -63,6 +63,17 @@ public class TestBuyInSearchShoes extends AbstractBaseTest {
         pageBuyInSearchShoes.closeFilter();
 
         Assert.assertEquals(unisexCategoryNumberOfItem, pageBuyInSearchShoes.getElementsCountByLocatorUnisex());
+
+        pageBuyInSearchShoes
+                .scrollUp()
+                .clickGenderButton()
+                .clickClearButton()
+                .clickBoysButton();
+
+        int boysCategoryNumberOfItem = pageBuyInSearchShoes.getTextGenderBoysCategories();
+        pageBuyInSearchShoes.closeFilter();
+
+        Assert.assertEquals(boysCategoryNumberOfItem, pageBuyInSearchShoes.getElementsCountByLocatorBoys());
 
     }
 }

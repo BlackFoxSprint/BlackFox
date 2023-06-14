@@ -161,4 +161,42 @@ public class PageBuyInSearchShoes extends ElementsToBuyShoes {
 
         return newSize;
     }
+    public PageBuyInSearchShoes clickBoysButton(){
+        waitUntilElementToBeClickableByXpath(BOYS_BUTTON).click();
+        return this;
+    }
+    public int getTextGenderBoysCategories(){
+        return Integer.parseInt(waitUntilElementToBeVisibleByXpath(BOYS_BUTTON)
+                .getText().replace("Boys[","").replace("]",""));
+    }
+    public int getElementsCountByLocatorBoys() {
+        int prevSize = 0;
+        int newSize = 0;
+
+        do {
+            prevSize = newSize;
+
+            ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+            ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, -200)");
+
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            List<WebElement> elements = wait.until(ExpectedConditions
+                    .presenceOfAllElementsLocatedBy(By.xpath("//a[@data-test-id='product-list-item-link']")));
+            newSize = elements.size();
+
+        } while (prevSize < newSize);
+
+        return newSize;
+    }
+
+    public PageBuyInSearchShoes clickPriceButton(){
+        waitUntilElementToBeClickableByXpath(PRICE_FILTER_BUTTON).click();
+        return this;
+    }
+
 }
