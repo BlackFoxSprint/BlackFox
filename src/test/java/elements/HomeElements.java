@@ -15,4 +15,4 @@ public class HomeElements extends AbstractBasePage {
     public static final String COOKIES_DISMISS ="//div[@class='relative w-4 opacity-100 mr-0 ml-0 rtl:ml-0 rtl:mr-0']";
     public static final String SEARCH_SIMPLE_BTN ="//button[@data-test-id='search-icon-nav']//div[@data-uds-child='icon']";
     public static final String SEARCH_BTN ="//button[@type='submit']//div";
-}
+    }
