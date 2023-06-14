@@ -21,5 +21,9 @@ public class ElementsToBuyShoes extends AbstractBasePage {
     protected final static String GENDER_WOMAN_CATEGORIES = "//label[@for='Women']";
     protected final static String CLOSE_COOKIE_BANNER = "//button[@data-test-id='cookie-banner-close-btn']";
     protected final static String UNISEX_BUTTON = "//label[@for='Unisex']";
+    protected final static String BOYS_BUTTON = "//label[@for='Boys']";
+    protected final static String PRICE_FILTER_BUTTON = "//div[@data-test-id='price-filter-pill']";
+    protected final static String PRICE_BUTTON = "//input[@id='(50..100)']";
+    protected final static String PRODUCT_LIST = "//li[@data-test-id='product-list-item']";
 
 }
