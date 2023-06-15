@@ -20,7 +20,6 @@ public class RegisterElements extends AbstractBasePage {
     public static final String GENERAL_TERMS_AND_CONDITIONS = "//h2[@class='font-bold']/strong";
     public static final String FORGOTTEN_YOUR_PASSWORD = "//button[@data-test-id='forgotten-password-link']";
     public static final String SUBMIT_IN_FORGOTTEN_PASSWORD = "//button[@data-test-id='submit-password-reset-btn']";
-    public static final String SUCCESS_SEND_EMAIL = "//p[@data-test-id='password-reset-email-sent-success']";
     public static final String EMAIL_FIELD_IN_FORGOTTEN_PASSWORD = "//input[@data-test-id='email-input']";
     public static final String EMAIL_FIELD_ON_LOGIN_PAGE = "//input[@data-test-id='auth-field-email']";
     public static final String PASSWORD_FIELD_ON_LOGIN_PAGE = "//input[@data-test-id='auth-field-password']";

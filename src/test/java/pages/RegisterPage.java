@@ -68,11 +68,6 @@ public class RegisterPage extends RegisterElements {
         return this;
     }
 
-    public RegisterPage VerifySuccessEmailSend() {
-        waitUntilElementToBeVisibleByXpath(SUCCESS_SEND_EMAIL);
-        return this;
-    }
-
     public RegisterPage fillEmailInForgottenPassword() {
         waitUntilElementToBeClickableByXpath(EMAIL_FIELD_IN_FORGOTTEN_PASSWORD).sendKeys("maksbidzura@gmail.com");
         return this;
