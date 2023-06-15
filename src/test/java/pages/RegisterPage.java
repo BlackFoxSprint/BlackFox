@@ -4,6 +4,7 @@ import elements.RegisterElements;
 import org.openqa.selenium.WebDriver;
 
 public class RegisterPage extends RegisterElements {
+
     public RegisterPage(WebDriver driver) {
         super(driver);
     }
@@ -87,5 +88,4 @@ public class RegisterPage extends RegisterElements {
         waitUntilElementToBeClickableByXpath(LOGIN_BUTTON_ON_LOGIN_PAGE).click();
         return this;
     }
-
 }

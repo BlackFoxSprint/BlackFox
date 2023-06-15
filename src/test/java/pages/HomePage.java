@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class HomePage extends HomeElements {
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -31,12 +32,12 @@ public class HomePage extends HomeElements {
     }
 
     public HomePage clickAccountButton() {
-        waitUntilElementToBeClickableByXpath(ACCOUNT_BUTTON).click();
+        waitUntilElementToBeClickableByXpath(ACCOUNT_ICON_BUTTON).click();
         return this;
     }
 
     public HomePage clickRegisterHereButton() {
-        waitUntilElementToBeClickableByXpath(REGISTER_HERE_BUTTON_ON_ACCOUNT_MENU).click();
+        waitUntilElementToBeClickableByXpath(REGISTER_HERE_BUTTON).click();
         return this;
     }
 
@@ -49,5 +50,4 @@ public class HomePage extends HomeElements {
         waitUntilElementToBeClickableByXpath(RETURN_HOME_PAGE_PUMA_ICON).click();
         return this;
     }
-
 }

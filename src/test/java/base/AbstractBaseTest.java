@@ -4,8 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import pages.HomePage;
 
-abstract public class AbstractBaseTest{
+abstract public class AbstractBaseTest {
 
     protected WebDriver driver;
 
@@ -35,5 +36,9 @@ abstract public class AbstractBaseTest{
 
     public boolean urlContains(String urlPath) {
         return driver.getCurrentUrl().contains(urlPath);
+    }
+
+    public String getPageSource() {
+        return driver.getPageSource();
     }
 }

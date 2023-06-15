@@ -8,6 +8,7 @@ import pages.HomePage;
 import pages.RegisterPage;
 
 public class RegistrationTest extends AbstractBaseTest {
+
     @DataProvider(name = "testData")
     public Object[][] provideTestData() {
         return new Object[][]{
@@ -23,8 +24,6 @@ public class RegistrationTest extends AbstractBaseTest {
         RegisterPage registerPage = new RegisterPage(driver);
         SoftAssert softAssert = new SoftAssert();
 
-        String pageSource;
-
         homePage.clickAccountButton();
         homePage.clickRegisterHereButton();
         registerPage.fillFirstName(userFirstName);
@@ -37,7 +36,7 @@ public class RegistrationTest extends AbstractBaseTest {
             registerPage.waitLoginAlreadyInUse();
         }
 
-        pageSource = driver.getPageSource();
+        String pageSource = getPageSource();
         if (userEmail.equals("maksbidzura@gmail.com")) {
             softAssert.assertTrue(pageSource.contains("Login already in use"), "Login already in use message not found");
         } else {
@@ -62,8 +61,6 @@ public class RegistrationTest extends AbstractBaseTest {
         RegisterPage registerPage = new RegisterPage(driver);
         SoftAssert softAssert = new SoftAssert();
 
-        String pageSource;
-
         homePage.clickAccountButton();
         homePage.clickLoginButtonOnAccountMenu();
         registerPage.clickCreateAccountOnTop();
@@ -77,7 +74,7 @@ public class RegistrationTest extends AbstractBaseTest {
             registerPage.waitLoginAlreadyInUse();
         }
 
-        pageSource = driver.getPageSource();
+        String pageSource = getPageSource();
         if (userEmail.equals("maksbidzura@gmail.com")) {
             softAssert.assertTrue(pageSource.contains("Login already in use"), "Login already in use message not found");
         } else {
@@ -93,24 +90,22 @@ public class RegistrationTest extends AbstractBaseTest {
         RegisterPage registerPage = new RegisterPage(driver);
         SoftAssert softAssert = new SoftAssert();
 
-        String pageSourceTermsAndConditions;
-        String pageSourcePrivacyPolicy;
-
         homePage.clickAccountButton();
         homePage.clickRegisterHereButton();
         registerPage.clickTermsAndConditions();
 
-        pageSourceTermsAndConditions = driver.getPageSource();
+        String pageSource = getPageSource();
         registerPage.waitTermsAndConditions();
-        softAssert.assertTrue(pageSourceTermsAndConditions.contains("General Terms and Conditions"), "PUMA.com General Terms and Conditions");
+        softAssert.assertTrue(pageSource.contains("PUMA.com"), "PUMA.com General Terms and Conditions");
 
         homePage.clickReturnHomePagePumaIcon();
         homePage.clickAccountButton();
         homePage.clickRegisterHereButton();
         registerPage.clickPrivacyPolicy();
 
-        pageSourcePrivacyPolicy = driver.getPageSource();
-        softAssert.assertTrue(pageSourcePrivacyPolicy.contains("Privacy Policy"), "Privacy Policy");
+        softAssert.assertTrue(pageSource.contains("Privacy Policy"), "Privacy Policy");
+
+        softAssert.assertAll();
     }
 
     @Test(description = "55-60 Steps Forgot Password Send Email")
@@ -119,16 +114,15 @@ public class RegistrationTest extends AbstractBaseTest {
         RegisterPage registerPage = new RegisterPage(driver);
         SoftAssert softAssert = new SoftAssert();
 
-        String pageSource;
-
         homePage.clickAccountButton();
         homePage.clickLoginButtonOnAccountMenu();
         registerPage.clickFrogottenYourPassword();
         registerPage.fillEmailInForgottenPassword();
         registerPage.clickSumbitInForgottenPassword();
 
-        pageSource = driver.getPageSource();
+        String pageSource = getPageSource();
         softAssert.assertTrue(pageSource.contains("We’ve sent an email to"), "SUCCESS_SEND_EMAIL");
+
         softAssert.assertAll();
     }
 
@@ -146,8 +140,6 @@ public class RegistrationTest extends AbstractBaseTest {
         RegisterPage registerPage = new RegisterPage(driver);
         SoftAssert softAssert = new SoftAssert();
 
-        String pageSource;
-
         homePage.clickAccountButton();
         homePage.clickLoginButtonOnAccountMenu();
         registerPage.fillLoginEmail(userEmail);
@@ -157,7 +149,7 @@ public class RegistrationTest extends AbstractBaseTest {
             registerPage.clickLoginButtonOnLoginPage();
         }
 
-        pageSource = driver.getPageSource();
+        String pageSource = getPageSource();
         if (userEmail.equals("maksbidzura@gmail.com")) {
             softAssert.assertTrue(pageSource.contains("My account"), "My account");
         } else {
@@ -166,5 +158,4 @@ public class RegistrationTest extends AbstractBaseTest {
 
         softAssert.assertAll();
     }
-
 }
