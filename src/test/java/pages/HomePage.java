@@ -4,30 +4,39 @@ import elements.HomeElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import static base.CommonActions.moveCursor;
+
 public class HomePage extends HomeElements {
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
-    public WebElement getWomenCategory() {
-       return waitUntilElementToBeVisibleByXpath("//a[@data-link-name='Women']");
+    public WebElement getCategory(String category) {
+        return waitUntilElementToBeVisibleByXpath(String.format(CATEGORY, category));
     }
 
-    public WebElement getMenCategory() {
-        return waitUntilElementToBeVisibleByXpath("//a[@data-link-name='Men']");
+    public HomePage clickOnCategory(String category) {
+        waitUntilElementToBeVisibleByXpath(String.format(CATEGORY, category)).click();
+        return this;
     }
 
-    public WebElement getKidsCategory() {
-        return waitUntilElementToBeVisibleByXpath("//a[@data-link-name='Kids']");
+    public HomePage clickSelectLocationCloseBtn() {
+        waitUntilElementToBeClickableByXpath(SELECT_LOCATION_CLOSE_BTN).click();
+        return this;
+    }
+    public HomePage clickWomenClassicsCategoryBtn() {
+        waitUntilElementToBeVisibleByXpath(WOMEN_CLASSICS_CATEGORY).click();
+        return this;
     }
 
-    public WebElement getSaleCategory() {
-        return waitUntilElementToBeVisibleByXpath("//a[@data-link-name='Sale']");
+    public HomePage clickCookieCloseBtn() {
+        waitUntilElementToBeClickableByXpath(COOKIE_CLOSE_BTN).click();
+        return this;
     }
 
-    public HomePage clickClassicsWomenShoes() {
-        waitUntilElementToBeClickableByXpath("//a[@href='/us/en/women/shoes/classics']").click();
+    public HomePage moveToCategory(String category) {
+        moveCursor(getCategory(category), driver);
         return this;
     }
 
