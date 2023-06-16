@@ -39,4 +39,24 @@ public class HomePage extends HomeElements {
         moveCursor(getCategory(category), driver);
         return this;
     }
+
+    public HomePage clickAccountButton() {
+        waitUntilElementToBeClickableByXpath(ACCOUNT_ICON_BUTTON).click();
+        return this;
+    }
+
+    public HomePage clickRegisterHereButton() {
+        waitUntilElementToBeClickableByXpath(REGISTER_HERE_BUTTON).click();
+        return this;
+    }
+
+    public HomePage clickLoginButtonOnAccountMenu() {
+        waitUntilElementToBeClickableByXpath(LOGIN_BUTTON_ON_ACCOUNT_MENU).click();
+        return this;
+    }
+
+    public HomePage clickReturnHomePagePumaIcon() {
+        waitUntilElementToBeClickableByXpath(RETURN_HOME_PAGE_PUMA_ICON).click();
+        return this;
+    }
 }
