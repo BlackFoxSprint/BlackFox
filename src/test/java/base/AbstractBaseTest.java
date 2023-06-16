@@ -36,4 +36,8 @@ abstract public class AbstractBaseTest {
     public boolean urlContains(String urlPath) {
         return driver.getCurrentUrl().contains(urlPath);
     }
+
+    public String getPageSource() {
+        return driver.getPageSource();
+    }
 }
