@@ -48,7 +48,5 @@ public class DeliveryServiceTest extends AbstractBaseTest {
 
         assertEquals("https://us.puma.com/us/en/checkout/payment?smsUpdate=true&emailList=true"
                 ,getURL());
-
-
     }
 }
