@@ -16,20 +16,21 @@ public class DeliveryServiceTest extends AbstractBaseTest {
         SpongeBobCollectionPage productPage = new SpongeBobCollectionPage(driver);
         Actions actions = new Actions(driver);
 
-        homePage.clickModalWindowClose();
-        homePage.clickCookiesDismiss();
-        homePage.clickSearchField();
+        homePage.clickModalWindowClose()
+                .clickCookiesDismiss()
+                .clickSearchField();
 
         actions.sendKeys(homePage.searchInputField(), "PORSCHE").build().perform();
 
         homePage.clickSearchBtn();
 
-        productPage.clickPorscheJacketBtn();
-        productPage.clickSizeMBtn();
-        productPage.clickAddToCartBtn();
-        productPage.clickOpenCartBtn();
-        productPage.clickCheckoutBtn();
-        productPage.clickContinuePaymentBtn();
+        productPage
+                .clickPorscheJacketBtn()
+                .clickSizeMBtn()
+                .clickAddToCartBtn()
+                .clickOpenCartBtn()
+                .clickCheckoutBtn()
+                .clickContinuePaymentBtn();
 
         assertEquals("Please fill out this field."
                 ,productPage.warningEmptyFields().getText());
