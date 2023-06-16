@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.ArrayList;
@@ -28,10 +27,12 @@ abstract public class AbstractBasePage {
     protected WebElement waitUntilElementToBeVisibleByXpath(String locator) {
         return wait.until(visibilityOfElementLocated(By.xpath(locator)));
     }
+    protected List<WebElement> listWaitUntilElementsToBeVisibleByXpath(String locator) {
+        return wait.until(visibilityOfAllElementsLocatedBy(By.xpath(locator)));
+    }
 
     protected static WebElement waitUntilElementToBeClickableByXpath(String locator) {
         return wait.until(elementToBeClickable(By.xpath(locator)));
-
     }
 
     protected WebElement waitUntilPresenceOfElementByXpath(String locator) {

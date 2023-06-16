@@ -7,4 +7,6 @@ public class MenElements extends AbstractBasePage {
     public MenElements(WebDriver driver) {
         super(driver);
     }
+
+    public static final String BMW_MOTOR_SPORT_POLO = "(//h3[contains(text(),'BMW M')]/..)[1]";
 }
