@@ -24,12 +24,15 @@ public class RegistrationTest extends AbstractBaseTest {
         RegisterPage registerPage = new RegisterPage(driver);
         SoftAssert softAssert = new SoftAssert();
 
-        homePage.clickAccountButton();
-        homePage.clickRegisterHereButton();
-        registerPage.fillFirstName(userFirstName);
-        registerPage.fillLastName(userLastName);
-        registerPage.fillEmail(userEmail);
-        registerPage.fillPassword(userPassword);
+        homePage
+                .clickAccountButton()
+                .clickRegisterHereButton();
+
+        registerPage
+                .fillFirstName(userFirstName)
+                .fillLastName(userLastName)
+                .fillEmail(userEmail)
+                .fillPassword(userPassword);
 
         if (shouldClickRegister == true) {
             registerPage.clickRegister();
@@ -61,13 +64,16 @@ public class RegistrationTest extends AbstractBaseTest {
         RegisterPage registerPage = new RegisterPage(driver);
         SoftAssert softAssert = new SoftAssert();
 
-        homePage.clickAccountButton();
-        homePage.clickLoginButtonOnAccountMenu();
-        registerPage.clickCreateAccountOnTop();
-        registerPage.fillFirstName(userFirstName);
-        registerPage.fillLastName(userLastName);
-        registerPage.fillEmail(userEmail);
-        registerPage.fillPassword(userPassword);
+        homePage
+                .clickAccountButton()
+                .clickLoginButtonOnAccountMenu();
+
+        registerPage
+                .clickCreateAccountOnTop()
+                .fillFirstName(userFirstName)
+                .fillLastName(userLastName)
+                .fillEmail(userEmail)
+                .fillPassword(userPassword);
 
         if (shouldClickRegister) {
             registerPage.clickRegister();
@@ -90,18 +96,24 @@ public class RegistrationTest extends AbstractBaseTest {
         RegisterPage registerPage = new RegisterPage(driver);
         SoftAssert softAssert = new SoftAssert();
 
-        homePage.clickAccountButton();
-        homePage.clickRegisterHereButton();
-        registerPage.clickTermsAndConditions();
+        homePage
+                .clickAccountButton()
+                .clickRegisterHereButton();
+
+        registerPage
+                .clickTermsAndConditions();
 
         String pageSource = getPageSource();
         registerPage.waitTermsAndConditions();
         softAssert.assertTrue(pageSource.contains("PUMA.com"), "PUMA.com General Terms and Conditions");
 
-        homePage.clickReturnHomePagePumaIcon();
-        homePage.clickAccountButton();
-        homePage.clickRegisterHereButton();
-        registerPage.clickPrivacyPolicy();
+        homePage
+                .clickReturnHomePagePumaIcon()
+                .clickAccountButton()
+                .clickRegisterHereButton();
+
+        registerPage
+                .clickPrivacyPolicy();
 
         softAssert.assertTrue(pageSource.contains("Privacy Policy"), "Privacy Policy");
 
@@ -114,11 +126,14 @@ public class RegistrationTest extends AbstractBaseTest {
         RegisterPage registerPage = new RegisterPage(driver);
         SoftAssert softAssert = new SoftAssert();
 
-        homePage.clickAccountButton();
-        homePage.clickLoginButtonOnAccountMenu();
-        registerPage.clickFrogottenYourPassword();
-        registerPage.fillEmailInForgottenPassword();
-        registerPage.clickSumbitInForgottenPassword();
+        homePage
+                .clickAccountButton()
+                .clickLoginButtonOnAccountMenu();
+
+        registerPage
+                .clickFrogottenYourPassword()
+                .fillEmailInForgottenPassword()
+                .clickSumbitInForgottenPassword();
 
         String pageSource = getPageSource();
         softAssert.assertTrue(pageSource.contains("We’ve sent an email to"), "SUCCESS_SEND_EMAIL");
@@ -140,10 +155,13 @@ public class RegistrationTest extends AbstractBaseTest {
         RegisterPage registerPage = new RegisterPage(driver);
         SoftAssert softAssert = new SoftAssert();
 
-        homePage.clickAccountButton();
-        homePage.clickLoginButtonOnAccountMenu();
-        registerPage.fillLoginEmail(userEmail);
-        registerPage.fillLoginPassword(userPassword);
+        homePage
+                .clickAccountButton()
+                .clickLoginButtonOnAccountMenu();
+
+        registerPage
+                .fillLoginEmail(userEmail)
+                .fillLoginPassword(userPassword);
 
         if (shouldClickRegister == true) {
             registerPage.clickLoginButtonOnLoginPage();
