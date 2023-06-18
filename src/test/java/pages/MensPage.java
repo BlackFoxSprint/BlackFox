@@ -3,9 +3,9 @@ package pages;
 import base.AbstractBasePage;
 import org.openqa.selenium.WebDriver;
 
-public class KidsPage extends AbstractBasePage {
+public class MensPage extends AbstractBasePage {
 
-    public KidsPage(WebDriver driver) {
+    public MensPage(WebDriver driver) {
         super(driver);
     }
 }

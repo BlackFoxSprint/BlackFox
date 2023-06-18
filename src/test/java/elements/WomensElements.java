@@ -3,9 +3,9 @@ package elements;
 import base.AbstractBasePage;
 import org.openqa.selenium.WebDriver;
 
-public class KidsElements extends AbstractBasePage {
+public class WomensElements extends AbstractBasePage {
 
-    public KidsElements(WebDriver driver) {
+    public WomensElements(WebDriver driver) {
         super(driver);
     }
 }

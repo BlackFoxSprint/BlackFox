@@ -8,6 +8,7 @@ import static java.lang.Thread.sleep;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class ShoppingCartTest extends AbstractBaseTest {
+
     @Test
     public void checkShoppingCart() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
