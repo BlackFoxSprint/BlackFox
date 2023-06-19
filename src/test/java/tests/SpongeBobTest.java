@@ -10,7 +10,6 @@ import static base.CommonActions.moveCursor;
 
 import static org.testng.AssertJUnit.assertTrue;
 
-
 public class SpongeBobTest extends AbstractBaseTest {
     @Test
     public void CheckSpongeBobCollection() {
@@ -18,8 +17,8 @@ public class SpongeBobTest extends AbstractBaseTest {
         SpongeBobCollectionPage productPage = new SpongeBobCollectionPage(driver);
         Actions actions = new Actions(driver);
 
-        homePage.clickModalWindowClose();
-        homePage.clickCookiesDismiss();
+        homePage.clickModalWindowClose()
+                .clickCookiesDismiss();
 
         moveCursor(homePage.collaborationBtn(),driver);
 
@@ -33,26 +32,28 @@ public class SpongeBobTest extends AbstractBaseTest {
         homePage.clickSearchField();
 
         homePage.searchInputField().sendKeys("PUMA x SPONGEBOB");
+        actions.sendKeys(homePage.searchInputField(), "PUMA x SPONGEBOB").build().perform();
+
         homePage.clickSearchBtn();
 
         for (WebElement x : productPage.listProductNames())
             assertTrue(x.getText().contains("SPONGEBOB"));
 
-        productPage.clickFilterBtn();
-        productPage.clickGenderBtn();
-        productPage.clickGirlsCategory();
+        productPage.clickFilterBtn()
+                .clickGenderBtn()
+                .clickGirlsCategory();
 
         for (WebElement x : productPage.listProductNames())
             assertTrue(x.getText().contains("SPONGEBOB"));
 
-        productPage.clickGirlsCategory();
-        productPage.clickMenCategory();
+        productPage.clickGirlsCategory()
+                .clickMenCategory();
 
         for (WebElement x : productPage.listProductNames())
             assertTrue(x.getText().contains("SPONGEBOB"));
 
-        productPage.clickMenCategory();
-        productPage.clickUnisexCategory();
+        productPage.clickMenCategory()
+                .clickUnisexCategory();
 
         for (WebElement x : productPage.listProductNames())
             assertTrue(x.getText().contains("SPONGEBOB"));
