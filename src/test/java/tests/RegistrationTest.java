@@ -121,7 +121,7 @@ public class RegistrationTest extends AbstractBaseTest {
     }
 
     @Test(description = "55-60 Steps Forgot Password Send Email")
-    public void checkSendedEmail() {
+    public void checkSendEmail() {
         HomePage homePage = new HomePage(driver);
         RegisterPage registerPage = new RegisterPage(driver);
         SoftAssert softAssert = new SoftAssert();
