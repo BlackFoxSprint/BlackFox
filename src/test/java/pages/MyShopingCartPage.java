@@ -1,22 +1,22 @@
 package pages;
 
-import elements.MyShopingCartElements;
+import elements.MyShoppingCartElements;
 import org.openqa.selenium.WebDriver;
 
-public class MyShopingCartPage extends MyShopingCartElements {
+public class MyShopingCartPage extends MyShoppingCartElements {
 
     public MyShopingCartPage(WebDriver driver) {
         super(driver);
     }
 
     public double getPriceOnCartPage(){
-        return Double.parseDouble(getPriceFieldOnShopingCart()
+        return Double.parseDouble(getPriceFieldOnShoppingCart()
                 .getText()
                 .replace("$",""));
     }
 
     public double getSalePriceOnShopingCart(){
-        return Double.parseDouble(getSalePriceFieldOnShopingCart()
+        return Double.parseDouble(getSalePriceFieldOnShoppingCart()
                 .getText()
                 .replace("$",""));
     }

@@ -1,4 +1,4 @@
-package Tests;
+package tests;
 
 import base.AbstractBaseTest;
 import org.openqa.selenium.WebElement;
@@ -17,8 +17,9 @@ public class SpongeBobTest extends AbstractBaseTest {
         SpongeBobCollectionPage productPage = new SpongeBobCollectionPage(driver);
         Actions actions = new Actions(driver);
 
-        homePage.clickModalWindowClose()
-                .clickCookiesDismiss();
+        homePage
+                .clickSelectLocationCloseBtn()
+                .clickCookieCloseBtn();
 
         moveCursor(homePage.collaborationBtn(),driver);
 
