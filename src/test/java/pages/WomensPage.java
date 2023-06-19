@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class WomensPage extends WomensElements {
+
     public WomensPage(WebDriver driver) {
         super(driver);
     }

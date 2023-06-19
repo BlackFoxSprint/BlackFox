@@ -4,18 +4,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static java.time.Duration.ofMillis;
+import static org.openqa.selenium.By.cssSelector;
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 abstract public class AbstractBasePage {
+
     protected WebDriver driver;
     protected static WebDriverWait wait;
     private int BASE_WAIT = 15000;
@@ -28,18 +28,36 @@ abstract public class AbstractBasePage {
     protected WebElement waitUntilElementToBeVisibleByXpath(String locator) {
         return wait.until(visibilityOfElementLocated(By.xpath(locator)));
     }
+    protected List<WebElement> listWaitUntilElementsToBeVisibleByXpath(String locator) {
+        return wait.until(visibilityOfAllElementsLocatedBy(By.xpath(locator)));
+    }
+
+    protected WebElement waitUntilElementToBeVisibleByCss(String locator) {
+        return wait.until(visibilityOfElementLocated(cssSelector(locator)));
+    }
 
     protected static WebElement waitUntilElementToBeClickableByXpath(String locator) {
         return wait.until(elementToBeClickable(By.xpath(locator)));
+    }
 
+    protected static WebElement waitUntilElementToBeClickableByCss(String locator) {
+        return wait.until(elementToBeClickable(cssSelector(locator)));
     }
 
     protected WebElement waitUntilPresenceOfElementByXpath(String locator) {
         return wait.until(presenceOfElementLocated(By.xpath(locator)));
     }
 
+    protected WebElement waitUntilPresenceOfElementByCss(String locator) {
+        return wait.until(presenceOfElementLocated(cssSelector(locator)));
+    }
+
     protected List<WebElement> waitUntilPresenceOfAllElementsByXpath(String locator) {
         return wait.until(presenceOfAllElementsLocatedBy(By.xpath(locator)));
+    }
+
+    protected List<WebElement> waitUntilPresenceOfAllElementsByCss(String locator) {
+        return wait.until(presenceOfAllElementsLocatedBy(cssSelector(locator)));
     }
 
     public void goToNextTab(int tabNumber) {
@@ -60,5 +78,10 @@ abstract public class AbstractBasePage {
         ArrayList<String> switchToWindow = new ArrayList<>
                 (driver.getWindowHandles());
         driver.switchTo().window(switchToWindow.get(1));
+    }
+
+    public static String dataTestId(String id) {
+        final String cssSelector = String.format("[data-test-id='%s']", id);
+        return cssSelector;
     }
 }
