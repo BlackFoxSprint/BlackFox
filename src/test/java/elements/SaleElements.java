@@ -11,5 +11,4 @@ public class SaleElements extends AbstractBasePage {
 
     protected static final String LIST_SALE_PRICE = dataTestId("sale-price");
     protected static final String LIST_PRICE = dataTestId("price");
-    protected static final String PRODUCT_ITEMS = dataTestId("price");
 }
