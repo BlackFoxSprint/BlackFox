@@ -1,6 +1,7 @@
 package elements;
 
 import base.AbstractBasePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -38,8 +39,8 @@ public class HomeElements extends AbstractBasePage {
     public static final String PRICE_LOW_TO_HIGH_SORTING = "//select[@data-test-id='product-list-sort-select-input']//option[@value='price-low-to-high']";
     public static final String PRICE_HIGH_TO_LOW_SORTING = "//select[@data-test-id='product-list-sort-select-input']//option[@value='price-high-to-low']";
     public static final String NEWEST_PRICE_SORTING = "//select[@data-test-id='product-list-sort-select-input']//option[@value='newest']";
-    public static final String MEN_SOCCER_SHOES_PRICE = "//span[@data-test-id='price']";
     public static final String LIST_OF_PRICE = "//div[@class='relative flex mobile:flex-col w-full items-start']/div/span[1]";
+    public static final String LIST_OF_NEWEST_PRODUCT = "//p[@data-test-id='product-badge']";
 
     public WebElement getPriceLowToHigh() {
         return waitUntilElementToBeVisibleByXpath(PRICE_LOW_TO_HIGH_SORTING);
@@ -59,5 +60,9 @@ public class HomeElements extends AbstractBasePage {
 
     public List<WebElement> getSortingBtn() {
         return waitUntilPresenceOfAllElementsByXpath(PRODUCT_SELECT_INPUT);
+    }
+
+    public List<WebElement> listNewProduct() {
+        return waitUntilPresenceOfAllElementsByXpath(LIST_OF_NEWEST_PRODUCT);
     }
 }
