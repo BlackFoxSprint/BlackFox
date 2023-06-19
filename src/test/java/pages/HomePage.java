@@ -21,6 +21,11 @@ public class HomePage extends HomeElements {
         return this;
     }
 
+    public HomePage clickSelectLocationCloseBtn() {
+        waitUntilElementToBeClickableByXpath(SELECT_LOCATION_CLOSE_BTN).click();
+        return this;
+    }
+
     public WebElement collaborationBtn() {
         return waitUntilElementToBeVisibleByXpath(COLLABORATION_BTN);
     }
@@ -47,10 +52,6 @@ public class HomePage extends HomeElements {
     public HomePage clickModalWindowClose() {
         waitUntilElementToBeClickableByXpath(MODAL_WINDOW_CLOSE).click();
         return this;
-    }
-
-    public WebElement getKidsCategory() {
-        return waitUntilElementToBeVisibleByXpath("//a[@data-link-name='Kids']");
     }
 
     public WebElement getSaleCategory() {
@@ -82,7 +83,7 @@ public class HomePage extends HomeElements {
         return this;
     }
 
-    public WebElement getPopUpMenuSaleWomenAccessories(){
+    public WebElement getPopUpMenuSaleWomenAccessories() {
         return waitUntilPresenceOfElementByXpath(POP_UP_MENU_SALE_WOMEN_ACCESSORIES);
     }
 
@@ -95,4 +96,10 @@ public class HomePage extends HomeElements {
         waitUntilElementToBeClickableByXpath(COOKIE_CLOSE_BTN);
         return this;
     }
+
+    public HomePage clickWomenClassicsCategoryBtn() {
+        waitUntilElementToBeVisibleByXpath(WOMEN_CLASSICS_CATEGORY).click();
+        return this;
+    }
 }
+
