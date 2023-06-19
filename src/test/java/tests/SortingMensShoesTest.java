@@ -65,7 +65,5 @@ public class SortingMensShoesTest extends AbstractBaseTest {
                 .clickSortingBtn(3)
                 .clickNewestPrice();
 
-        assertTrue();
-
     }
 }
