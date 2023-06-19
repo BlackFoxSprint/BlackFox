@@ -30,9 +30,8 @@ public class HomePage extends HomeElements {
         return this;
     }
 
-    public HomePage clickCookieCloseBtn() {
-        waitUntilElementToBeClickableByXpath(COOKIE_CLOSE_BTN).click();
-        return this;
+    public WebElement getSaleCategory() {
+        return waitUntilElementToBeVisibleByXpath("//a[@data-link-name='Sale']");
     }
 
     public HomePage moveToCategory(String category) {
@@ -57,6 +56,20 @@ public class HomePage extends HomeElements {
 
     public HomePage clickReturnHomePagePumaIcon() {
         waitUntilElementToBeClickableByXpath(RETURN_HOME_PAGE_PUMA_ICON).click();
+        return this;
+    }
+
+    public WebElement getPopUpMenuSaleWomenAccessories(){
+        return waitUntilPresenceOfElementByXpath(POP_UP_MENU_SALE_WOMEN_ACCESSORIES);
+    }
+
+    public HomePage clickPopUpMenuSaleWomenAccessories() {
+        getPopUpMenuSaleWomenAccessories().click();
+        return this;
+    }
+
+    public HomePage clickCookieCloseBtn() {
+        waitUntilElementToBeClickableByXpath(COOKIE_CLOSE_BTN);
         return this;
     }
 }
