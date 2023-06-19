@@ -21,13 +21,36 @@ public class HomePage extends HomeElements {
         return this;
     }
 
-    public HomePage clickSelectLocationCloseBtn() {
-        waitUntilElementToBeClickableByXpath(SELECT_LOCATION_CLOSE_BTN).click();
+    public WebElement collaborationBtn() {
+        return waitUntilElementToBeVisibleByXpath(COLLABORATION_BTN);
+    }
+
+    public HomePage clickSearchField() {
+        waitUntilElementToBeVisibleByXpath(SEARCH_FIELD).click();
         return this;
     }
-    public HomePage clickWomenClassicsCategoryBtn() {
-        waitUntilElementToBeVisibleByXpath(WOMEN_CLASSICS_CATEGORY).click();
+
+    public WebElement searchInputField() {
+        return waitUntilPresenceOfElementByXpath(SEARCH_INPUT_FIELD);
+    }
+
+    public HomePage clickSearchBtn() {
+        waitUntilElementToBeVisibleByXpath(SEARCH_BTN).click();
         return this;
+    }
+
+    public HomePage clickCookiesDismiss() {
+        waitUntilElementToBeVisibleByXpath(COOKIES_DISMISS).click();
+        return this;
+    }
+
+    public HomePage clickModalWindowClose() {
+        waitUntilElementToBeClickableByXpath(MODAL_WINDOW_CLOSE).click();
+        return this;
+    }
+
+    public WebElement getKidsCategory() {
+        return waitUntilElementToBeVisibleByXpath("//a[@data-link-name='Kids']");
     }
 
     public WebElement getSaleCategory() {
