@@ -1,10 +1,12 @@
 package pages;
 
 import elements.HomeElements;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import static base.CommonActions.moveCursor;
+import static java.lang.Thread.sleep;
 
 public class HomePage extends HomeElements {
 
@@ -126,4 +128,29 @@ public class HomePage extends HomeElements {
         getNewestPrice().click();
         return this;
     }
+
+    public HomePage clickClearBtn() {
+        waitUntilElementToBeVisibleByXpath(CLEAR_BTN).click();
+        return this;
+    }
+
+
+    public HomePage clickCloseButtonInSearchField() {
+        waitUntilElementToBeVisibleByXpath(CLOSE_BUTTON).click();
+        return this;
+    }
+
+    public boolean elementIsNotPresent() {
+        By elementLocator = By.xpath(INPUT_FIELD_VISIBILITY);
+        boolean searchFieldElementPresent = driver.findElements(elementLocator).isEmpty();
+        return searchFieldElementPresent;
+    }
+
+    public boolean elementIsNotPresent2() throws InterruptedException {
+        sleep(1000);
+        By elementLocator = By.xpath(SEARCH_BAR_VISIBILITY);
+        boolean searchElementPresent = driver.findElements(elementLocator).isEmpty();
+        return searchElementPresent;
+    }
+
 }

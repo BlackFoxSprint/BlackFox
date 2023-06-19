@@ -1,19 +1,35 @@
 package tests;
 
 import base.AbstractBaseTest;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.HomePage;
-import pages.RegisterPage;
+import pages.SpongeBobCollectionPage;
 
 public class SearchTest extends AbstractBaseTest {
-    @Test(description = "1-15 Steps Registration")
-    public void checkRegistration1(String userFirstName, String userLastName, String userEmail, String userPassword, boolean shouldClickRegister) {
+
+    @Test()
+    public void checkSearch() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
-        RegisterPage registerPage = new RegisterPage(driver);
         SoftAssert softAssert = new SoftAssert();
         Actions actions = new Actions(driver);
+        SpongeBobCollectionPage productPage = new SpongeBobCollectionPage(driver);
+
+        homePage.
+                clickSearchField()
+                .searchInputField().sendKeys("PUMA x SPONGEBOB");
+
+        homePage.
+                clickClearBtn();
+
+        softAssert.assertTrue(homePage.elementIsNotPresent(), "element1");
+
+        homePage.
+                clickCloseButtonInSearchField();
+
+        softAssert.assertTrue(homePage.elementIsNotPresent2(), "element2");
 
         homePage.
                 clickSearchField();
@@ -21,9 +37,12 @@ public class SearchTest extends AbstractBaseTest {
         homePage.searchInputField().sendKeys("PUMA x SPONGEBOB");
         actions.sendKeys(homePage.searchInputField(), "PUMA x SPONGEBOB").build().perform();
 
-        homePage.clickSearchBtn();
+        homePage.
+                clickSearchBtn();
 
+        for (WebElement x : productPage.listProductNames())
+            softAssert.assertTrue(x.getText().contains("SPONGEBOB"));
 
+        softAssert.assertAll();
     }
-
 }
