@@ -21,8 +21,4 @@ public class MyShoppingCartElements extends AbstractBasePage {
     public WebElement getSalePriceFieldOnShoppingCart() {
         return waitUntilElementToBeVisibleByCss(SALE_PRICE_FIELD_ON_SHOPPING_CART);
     }
-
-    public WebElement getSubtotalFieldOnShopingCart() {
-        return waitUntilElementToBeVisibleByCss(SUBTOTAL_FIELD_ON_SHOPPING_CART);
-    }
 }

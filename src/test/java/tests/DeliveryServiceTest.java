@@ -1,4 +1,4 @@
-package Tests;
+package tests;
 
 import base.AbstractBaseTest;
 import org.openqa.selenium.interactions.Actions;
@@ -16,8 +16,9 @@ public class DeliveryServiceTest extends AbstractBaseTest {
         SpongeBobCollectionPage productPage = new SpongeBobCollectionPage(driver);
         Actions actions = new Actions(driver);
 
-        homePage.clickModalWindowClose()
-                .clickCookiesDismiss()
+        homePage
+                .clickSelectLocationCloseBtn()
+                .clickCookieCloseBtn()
                 .clickSearchField();
 
         actions.sendKeys(homePage.searchInputField(), "PORSCHE").build().perform();

@@ -11,7 +11,7 @@ public class ShoppingCartElements extends AbstractBasePage {
         super(driver);
     }
 
-    public static final String VALUE_BTN = "//select[@data-test-id='quantity-select-input']";
+    public static final String VALUE_BTN = "//select[@id='product-list-sort-select']//option";
     public static final String SELECT_VALUE_BTN = "(//select[@data-test-id='quantity-select-input'])[1]";
     public static final String CART_PRODUCT_TITTLE = "(//h3[@data-test-id='cart-product-title'])[%s]";
     public static final String REMOVE_SECOND_PRODUCT_BTN = "(//button[@data-test-id='remove-product-button'])[2]";
