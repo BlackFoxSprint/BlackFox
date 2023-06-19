@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.SpongeBobCollectionPage;
 import org.openqa.selenium.interactions.Actions;
+import static base.CommonActions.moveCursor;
 
 import static org.testng.AssertJUnit.assertTrue;
 
@@ -20,7 +21,7 @@ public class SpongeBobTest extends AbstractBaseTest {
         homePage.clickModalWindowClose();
         homePage.clickCookiesDismiss();
 
-        actions.moveToElement(homePage.collaborationBtn()).build().perform();
+        moveCursor(homePage.collaborationBtn(),driver);
 
         productPage.clickPumaSpongeBtn();
 
@@ -31,7 +32,7 @@ public class SpongeBobTest extends AbstractBaseTest {
 
         homePage.clickSearchField();
 
-        actions.sendKeys(homePage.searchInputField(), "PUMA x SPONGEBOB").build().perform();
+        homePage.searchInputField().sendKeys("PUMA x SPONGEBOB");
         homePage.clickSearchBtn();
 
         for (WebElement x : productPage.listProductNames())
