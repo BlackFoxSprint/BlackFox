@@ -63,8 +63,8 @@ public class HomePage extends HomeElements {
         return waitUntilPresenceOfElementByXpath(POP_UP_MENU_SALE_WOMEN_ACCESSORIES);
     }
 
-    public HomePage ClosePopUpWindowSelectLocation(){
-        waitUntilElementToBeClickableByCss(CLOSE_POP_UP_SELECT_LOCATION_BUTTON).click();
+    public HomePage clickPopUpMenuSaleWomenAccessories() {
+        getPopUpMenuSaleWomenAccessories().click();
         return this;
     }
 

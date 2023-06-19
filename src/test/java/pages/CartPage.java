@@ -1,6 +1,7 @@
 package pages;
 
 import elements.CartElements;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -32,11 +33,6 @@ public class CartPage extends CartElements {
         return Double.parseDouble(getPriceField()
                 .getText()
                 .replace("$", ""));
-    }
-
-    public CartPage cookieBannerClose() {
-        waitUntilElementToBeClickableByCss(COOKIE_BANNER_CLOSE_BTN).click();
-        return this;
     }
 
     public List<WebElement> getSizeList() {

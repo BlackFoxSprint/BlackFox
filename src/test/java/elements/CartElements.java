@@ -13,7 +13,6 @@ public class CartElements extends AbstractBasePage {
     //cart page elements
     protected final String SALE_PRICE_FIELD = dataTestId("item-sale-price-pdp");
     protected final String PRICE_FIELD = dataTestId("item-price-pdp");
-    protected final String COOKIE_BANNER_CLOSE_BTN = dataTestId("cookie-banner-close-btn");
     protected final String SIZE_INPUT = dataTestId("size");//("[data-content='size-value']");
     protected final String ADD_TO_CART_BTN = dataTestId("pdp-add-to-cart");
 

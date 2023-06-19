@@ -11,8 +11,6 @@ import pages.SalePage;
 import java.util.List;
 
 import static base.CommonActions.moveCursor;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 public class SaleTest extends AbstractBaseTest {
 
@@ -23,17 +21,22 @@ public class SaleTest extends AbstractBaseTest {
         CartPage cartPage = new CartPage(driver);
         SoftAssert softAssert = new SoftAssert();
 
-        homePage.ClosePopUpWindowSelectLocation()
-                        .clickCookieCloseBtn();
+        homePage
+                .clickSelectLocationCloseBtn()
+                .clickCookieCloseBtn();
         moveCursor(homePage.getSaleCategory(), driver);
-        homePage.getPopUpMenuSaleWomenAccessories().click();
+        homePage.clickPopUpMenuSaleWomenAccessories();
 
         List<WebElement> listSalePrice = salePage.getListSalePrice();
         List<WebElement> listPrice = salePage.getListPrice();
 
         for (int i = 0; i <= listPrice.size() - 1; i++) {
-            double salePrice = Double.parseDouble(listSalePrice.get(i).getText().replace("$", ""));
-            double price = Double.parseDouble(listPrice.get(i).getText().replace("$", ""));
+            double salePrice = Double.parseDouble(listSalePrice.get(i)
+                    .getText()
+                    .replace("$", ""));
+            double price = Double.parseDouble(listPrice.get(i)
+                    .getText()
+                    .replace("$", ""));
 
             softAssert.assertTrue(salePrice < price, "Compare price in list items for" + i + "element" );
         }
@@ -43,8 +46,9 @@ public class SaleTest extends AbstractBaseTest {
                 .getText()
                 .replace("$", ""));
 
-        listSalePrice.get(listSalePrice.size() - 1).click();
-        cartPage.cookieBannerClose();
+        listSalePrice
+                .get(listSalePrice.size() - 1)
+                .click();
 
         double salePriceInCart = cartPage.getSalePriceOnCartPage();
 
