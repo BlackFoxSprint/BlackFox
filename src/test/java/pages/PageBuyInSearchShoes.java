@@ -32,10 +32,6 @@ public class PageBuyInSearchShoes extends ElementsToBuyShoes {
         return this;
     }
 
-    public PageBuyInSearchShoes clickCategoryButton() {
-        waitUntilElementToBeClickableByXpath(CATEGORY_BUTTON).click();
-        return this;
-    }
     public int getTextGenderMenCategories(){
 
        return Integer.parseInt(waitUntilElementToBeVisibleByXpath(GENDER_MEN_CATEGORIES)
