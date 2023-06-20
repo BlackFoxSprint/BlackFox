@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class HomePage extends HomeElements {
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -27,6 +28,11 @@ public class HomePage extends HomeElements {
 
     public HomePage clickClassicsWomenShoes() {
         waitUntilElementToBeClickableByXpath("//a[@href='/us/en/women/shoes/classics']").click();
+        return this;
+    }
+
+    public HomePage clickGetClickHereToExploreCareers() {
+        getClickHereToExploreCareers().click();
         return this;
     }
 }
