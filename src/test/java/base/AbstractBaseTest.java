@@ -47,4 +47,8 @@ abstract public class AbstractBaseTest {
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
+
+    public String getPageSource() {
+        return driver.getPageSource();
+    }
 }
