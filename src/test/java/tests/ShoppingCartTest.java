@@ -25,7 +25,7 @@ public class ShoppingCartTest extends AbstractBaseTest {
                 .clickWomenClassicsCategoryBtn();
 
         womenPage
-                .clickCaliWedgeWomenSneakers();
+                .clickCaliWedgeMixSneakers();
 
         String selectProductName = selectProductPage.getProductTittle();
         String selectProductPrice = selectProductPage.getProductPrice();
@@ -68,7 +68,7 @@ public class ShoppingCartTest extends AbstractBaseTest {
 
         shoppingCartPage
                 .getCartProductTittle("2")
-                .clickValueBtn(1)
+//              .clickValueBtn(2)
                 .selectValue("2");
         sleep(5000);
 

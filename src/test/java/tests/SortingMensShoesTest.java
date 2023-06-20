@@ -28,10 +28,9 @@ public class SortingMensShoesTest extends AbstractBaseTest {
             double priceFirst = Double.parseDouble(listPrice.get(i).getText().replace("$", ""));
             double priceSecond = Double.parseDouble(listPrice.get(i + 1).getText().replace("$", ""));
 
-            System.out.println("Price first: " + priceFirst + ", Price next: " + priceSecond);
+//            System.out.println("Price first: " + priceFirst + ", Price next: " + priceSecond);
             assertTrue(priceFirst <= priceSecond);
         }
-
         homePage
                 .moveToCategory("Men")
                 .clickMenBasketballShoesBtn()
@@ -45,7 +44,7 @@ public class SortingMensShoesTest extends AbstractBaseTest {
                     replace("$", "").replace(",", ""));
             double priceSecond = Double.parseDouble(newListPrice.get(i + 1).getText().replace("$", ""));
 
-            System.out.println("Price first: " + priceFirst + ", Price next: " + priceSecond);
+//            System.out.println("Price first: " + priceFirst + ", Price next: " + priceSecond);
             assertTrue(priceFirst >= priceSecond);
         }
         homePage
