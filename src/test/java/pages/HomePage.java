@@ -69,7 +69,12 @@ public class HomePage extends HomeElements {
     }
 
     public HomePage clickCookieCloseBtn() {
-        waitUntilElementToBeClickableByXpath(COOKIE_CLOSE_BTN);
+        waitUntilElementToBeClickableByXpath(CLOSE_COOKIE).click();
+        return this;
+    }
+
+    public HomePage clickSportBtn() {
+        waitUntilElementToBeClickableByXpath(SPORT_BTN).click();
         return this;
     }
 }
