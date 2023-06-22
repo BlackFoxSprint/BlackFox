@@ -2,6 +2,7 @@ package pages;
 
 import elements.HomeElements;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import static base.CommonActions.moveCursor;
 
@@ -11,38 +12,37 @@ public class HomePage extends HomeElements {
         super(driver);
     }
 
+    public WebElement getCategory(String category) {
+        return waitUntilElementToBeVisibleByXpath(String.format(CATEGORY, category));
+    }
+
     public HomePage clickOnCategory(String category) {
         waitUntilElementToBeVisibleByXpath(String.format(CATEGORY, category)).click();
         return this;
     }
 
     public HomePage clickSelectLocationCloseBtn() {
-        getSelectLocationCloseBtn().click();
+        waitUntilElementToBeClickableByXpath(SELECT_LOCATION_CLOSE_BTN).click();
         return this;
     }
 
     public HomePage clickWomenClassicsCategoryBtn() {
-        getWomenClassicsCategoryBtn().click();
-        return this;
-    }
-
-    public HomePage clickBoysSuedeCategoryBtn() {
-        getBoysSuedeCategoryBtn().click();
+        waitUntilElementToBeVisibleByXpath(WOMEN_CLASSICS_CATEGORY).click();
         return this;
     }
 
     public HomePage clickMenSoccerShoesBtn() {
-        getMenSoccerShoesBtn().click();
+        waitUntilElementToBeVisibleByXpath(SOCCER_SHOES_MEN_CATEGORY).click();
         return this;
     }
 
     public HomePage clickMenBasketballShoesBtn() {
-        getMenBasketballShoesBtn().click();
+        waitUntilElementToBeVisibleByXpath(BASKETBALL_SHOES_MEN_CATEGORY).click();
         return this;
     }
 
     public HomePage clickMenHatsAccessoriesBtn() {
-        getMenHatsAccessoriesBtn().click();
+        waitUntilElementToBeVisibleByXpath(HATS_ACCESSORIES_MEN_CATEGORY).click();
         return this;
     }
 
@@ -52,23 +52,27 @@ public class HomePage extends HomeElements {
     }
 
     public HomePage clickAccountButton() {
-        waitUntilElementToBeClickableByCss(ACCOUNT_ICON_BUTTON).click();
+        waitUntilElementToBeClickableByXpath(ACCOUNT_ICON_BUTTON).click();
         return this;
     }
 
     public HomePage clickRegisterHereButton() {
-        waitUntilElementToBeClickableByCss(REGISTER_HERE_BUTTON).click();
+        waitUntilElementToBeClickableByXpath(REGISTER_HERE_BUTTON).click();
         return this;
     }
 
     public HomePage clickLoginButtonOnAccountMenu() {
-        waitUntilElementToBeClickableByCss(LOGIN_BUTTON_ON_ACCOUNT_MENU).click();
+        waitUntilElementToBeClickableByXpath(LOGIN_BUTTON_ON_ACCOUNT_MENU).click();
         return this;
     }
 
     public HomePage clickReturnHomePagePumaIcon() {
-        getReturnHomePagePumaIcon().click();
+        waitUntilElementToBeClickableByXpath(RETURN_HOME_PAGE_PUMA_ICON).click();
         return this;
+    }
+
+    public WebElement getPopUpMenuSaleWomenAccessories() {
+        return waitUntilPresenceOfElementByXpath(POP_UP_MENU_SALE_WOMEN_ACCESSORIES);
     }
 
     public HomePage clickPopUpMenuSaleWomenAccessories() {
@@ -77,8 +81,16 @@ public class HomePage extends HomeElements {
     }
 
     public HomePage clickCookieCloseBtn() {
-        getCookieCloseBtn().click();
+        waitUntilElementToBeClickableByXpath(COOKIE_CLOSE_BTN);
         return this;
+    }
+
+    public WebElement collaborationBtn() {
+        return waitUntilElementToBeVisibleByXpath(COLLABORATION_BTN);
+    }
+
+    public WebElement searchInputField() {
+        return waitUntilPresenceOfElementByXpath(SEARCH_INPUT_FIELD);
     }
 
     public HomePage clickSearchBtn() {
@@ -87,7 +99,7 @@ public class HomePage extends HomeElements {
     }
 
     public HomePage clickSearchField() {
-        waitUntilElementToBeVisibleByCss(SEARCH_FIELD).click();
+        waitUntilElementToBeVisibleByXpath(SEARCH_FIELD).click();
         return this;
     }
 
@@ -108,16 +120,6 @@ public class HomePage extends HomeElements {
 
     public HomePage clickNewestPrice() {
         getNewestPrice().click();
-        return this;
-    }
-
-    public HomePage clickAgeGroup() {
-        getAgeGroup().click();
-        return this;
-    }
-
-    public HomePage clickLittleKidsAgeGroup() {
-        getLittleKidsAgeGroup().click();
         return this;
     }
 }
