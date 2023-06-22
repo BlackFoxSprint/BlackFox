@@ -9,7 +9,7 @@ public class SelectProductPage extends SelectProductElements {
     }
 
     public String getProductTittle() {
-        return waitUntilElementToBeVisibleByXpath(PRODUCT_TITTLE).getText();
+        return waitUntilElementToBeVisibleByCss(PRODUCT_TITTLE).getText();
     }
     public String getProductPrice() {
         return waitUntilElementToBeVisibleByXpath(PRODUCT_PRICE).getText();

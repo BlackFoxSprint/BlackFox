@@ -8,6 +8,6 @@ public class SelectProductElements extends AbstractBasePage {
         super(driver);
     }
 
-    public static final String PRODUCT_TITTLE = "//h1[@data-test-id='pdp-title']";
-    public static final String PRODUCT_PRICE = "//span[@data-test-id='item-price-pdp']";
+    public static final String PRODUCT_TITTLE = dataTestId("pdp-title");
+    public static final String PRODUCT_PRICE ="//div[@class='flex flex-col pb-1']/span[1]";
 }
