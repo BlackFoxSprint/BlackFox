@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,8 +87,8 @@ abstract public class AbstractBasePage {
         final String cssSelector = String.format("[data-test-id='%s']", id);
         return cssSelector;
     }
-    protected void moveCursor(WebElement element){
-        Actions actions = new Actions(driver);
+    protected void moveCursor(WebElement element, WebDriver driver){
+        Actions actions = new Actions(this.driver);
         actions.moveToElement(element).build().perform();
     }
 }

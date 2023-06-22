@@ -9,15 +9,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
-import static base.CommonActions.moveCursor;
-
 public class BuyProductAndAddToBagPage extends BuyProductAndAddToBagElements {
     public BuyProductAndAddToBagPage(WebDriver driver) {
         super(driver);
     }
 
     public BuyProductAndAddToBagPage moveCollaborations() {
-        moveCursor(waitUntilPresenceOfElementByXpath(COLLABORATIONS_BUTTON),driver);
+        moveCursor(waitUntilElementToBeVisibleByXpath(COLLABORATIONS_BUTTON), driver);
         return this;
     }
 
@@ -87,14 +85,12 @@ public class BuyProductAndAddToBagPage extends BuyProductAndAddToBagElements {
         return this;
     }
 
-    public BuyProductAndAddToBagPage clickToElementInPage() {;
-        // Знаходимо всі елементи з локатором //a[@data-test-id='product-list-item-link']
+    public BuyProductAndAddToBagPage clickToElementInPage() {
+
         List<WebElement> elements = driver.findElements(By.xpath("//a[@data-test-id='product-list-item-link']"));
 
-        // Цикл для клікання на кожен елемент
         for (WebElement element : elements) {
             element.click();
-            // Тут можна додати додаткові дії після кліку
         }
         return this;
     }
