@@ -9,9 +9,9 @@ public class WomenElements extends AbstractBasePage {
         super(driver);
     }
 
-    public static final String CALI_WEDGE_WOMEN_SNEAKERS = "(//h3[contains(text(),'Cali Wedge Women')])[1]";
+    public static final String CALI_WEDGE_MIX_SNEAKERS = "//h3[contains(text(),'Wedge Mix')]";
 
-    public WebElement getCaliWedgeWomenSneakersBtn() {
-        return waitUntilElementToBeClickableByXpath(CALI_WEDGE_WOMEN_SNEAKERS);
+    public WebElement getCaliWedgeMixSneakersBtn() {
+        return waitUntilElementToBeClickableByXpath(CALI_WEDGE_MIX_SNEAKERS);
     }
 }

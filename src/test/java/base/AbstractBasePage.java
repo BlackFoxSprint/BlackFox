@@ -5,10 +5,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,5 +88,10 @@ abstract public class AbstractBasePage {
     protected void moveCursor(WebElement element, WebDriver driver){
         Actions actions = new Actions(this.driver);
         actions.moveToElement(element).build().perform();
+    }
+
+    public static String dataAutomationId(String id) {
+        final String cssSelector = String.format("[data-automation-id='%s']", id);
+        return cssSelector;
     }
 }
