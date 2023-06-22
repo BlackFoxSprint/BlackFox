@@ -10,8 +10,8 @@ public class SpongeBobCollectionElements extends AbstractBasePage {
 
     public static final String PUMA_SPONGEBOB_BTN = "//a[contains(text() ,'SPONGEBOB')]";
     public static final String PRODUCTS_NAME_LIST = "//h3[@class='w-full mobile:text-sm mobile:pr-0 font-bold text-base pr-5 line-clamp-2']";
-    public static final String FILTER_BTN = "//span[text()='Filters']";
-    public static final String GENDER_BTN = "//span[contains(text(), 'Gender')]";
+    public static final String FILTER_BTN = "//h2[@class='mr-3']";
+    public static final String GENDER_BTN = "//div[@data-test-id='gender-filter-pill']/button";
     public static final String GIRLS_CATEGORY = "//input[@id='Girls']";
 //    public static final String MEN_CATEGORY = "//input[@id='Men']";
     public static final String MEN_CATEGORY = "//input[@id='Men']//../div";
