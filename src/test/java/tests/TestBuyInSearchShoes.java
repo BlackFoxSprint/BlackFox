@@ -9,6 +9,7 @@ import pages.PageBuyInSearchShoes;
 import static java.lang.Thread.sleep;
 
 public class TestBuyInSearchShoes extends AbstractBaseTest {
+
     @Test
     public void testBuyInSearchShoes() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
@@ -20,7 +21,6 @@ public class TestBuyInSearchShoes extends AbstractBaseTest {
                 .closeCookieEmail()
                 .clickSearchButton();
 
-        sleep(2000);
         pageBuyInSearchShoes
                 .clickBmwShoes()
                 .closeCookieInBmwPage()
@@ -74,6 +74,5 @@ public class TestBuyInSearchShoes extends AbstractBaseTest {
         pageBuyInSearchShoes.closeFilter();
 
         Assert.assertEquals(boysCategoryNumberOfItem, pageBuyInSearchShoes.getElementsCountByLocatorBoys());
-
     }
 }

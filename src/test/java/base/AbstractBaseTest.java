@@ -21,9 +21,9 @@ abstract public class AbstractBaseTest {
         driver.get("https://us.puma.com/us/en/search?q=Bmw");
     }
     @AfterMethod
-//    public void closeWindow() {
-//        driver.quit();
-//    }
+    public void closeWindow() {
+        driver.quit();
+    }
 
     public WebDriver getDriver() {
         return driver;
@@ -39,5 +39,9 @@ abstract public class AbstractBaseTest {
 
     public boolean urlContains(String urlPath) {
         return driver.getCurrentUrl().contains(urlPath);
+    }
+
+    public String getPageSource() {
+        return driver.getPageSource();
     }
 }

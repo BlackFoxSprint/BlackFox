@@ -23,7 +23,7 @@ public class PageBuyInSearchShoes extends ElementsToBuyShoes {
     }
 
     public PageBuyInSearchShoes clickGenderButton() {
-        waitUntilElementToBeClickableByXpath(GENDER_BUTTON).click();
+        waitUntilElementToBeClickableByCss(GENDER_BUTTON).click();
         return this;
     }
 
@@ -72,11 +72,11 @@ public class PageBuyInSearchShoes extends ElementsToBuyShoes {
 
 
     public PageBuyInSearchShoes closeFilter(){
-        waitUntilElementToBeClickableByXpath(CLOSE_FILTER).click();
+        waitUntilElementToBeClickableByCss(CLOSE_FILTER).click();
         return this;
     }
     public PageBuyInSearchShoes closeCookieBanner(){
-        waitUntilElementToBeClickableByXpath(CLOSE_COOKIE_BANNER).click();
+        waitUntilElementToBeClickableByCss(CLOSE_COOKIE_BANNER).click();
         return this;
     }
     public PageBuyInSearchShoes scrollUp() {
@@ -182,7 +182,7 @@ public class PageBuyInSearchShoes extends ElementsToBuyShoes {
             }
 
             List<WebElement> elements = wait.until(ExpectedConditions
-                    .presenceOfAllElementsLocatedBy(By.xpath("//a[@data-test-id='product-list-item-link']")));
+                    .presenceOfAllElementsLocatedBy(By.xpath(ELEMENTS_BOYS)));
             newSize = elements.size();
 
         } while (prevSize < newSize);
@@ -191,7 +191,7 @@ public class PageBuyInSearchShoes extends ElementsToBuyShoes {
     }
 
     public PageBuyInSearchShoes clickPriceButton(){
-        waitUntilElementToBeClickableByXpath(PRICE_FILTER_BUTTON).click();
+        waitUntilElementToBeClickableByCss(PRICE_FILTER_BUTTON).click();
         return this;
     }
 
