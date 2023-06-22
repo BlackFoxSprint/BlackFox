@@ -19,11 +19,8 @@ public class HomePage extends HomeElements {
     }
 
     public HomePage clickSelectLocationCloseBtn() {
-<<<<<<<<< Temporary merge branch 1
         waitUntilElementToBeClickableByCss(SELECT_LOCATION_CLOSE_BTN).click();
-=========
         getSelectLocationCloseBtn().click();
->>>>>>>>> Temporary merge branch 2
         return this;
     }
 
@@ -73,11 +70,8 @@ public class HomePage extends HomeElements {
     }
 
     public HomePage clickReturnHomePagePumaIcon() {
-<<<<<<<<< Temporary merge branch 1
         waitUntilElementToBeClickableByCss(RETURN_HOME_PAGE_PUMA_ICON).click();
-=========
         getReturnHomePagePumaIcon().click();
->>>>>>>>> Temporary merge branch 2
         return this;
     }
 
@@ -87,11 +81,8 @@ public class HomePage extends HomeElements {
     }
 
     public HomePage clickCookieCloseBtn() {
-<<<<<<<<< Temporary merge branch 1
         waitUntilElementToBeClickableByCss(COOKIE_CLOSE_BTN);
-=========
         getCookieCloseBtn().click();
->>>>>>>>> Temporary merge branch 2
         return this;
     }
 
@@ -125,12 +116,10 @@ public class HomePage extends HomeElements {
         return this;
     }
 
-<<<<<<<<< Temporary merge branch 1
     public HomePage clickClearBtn() {
         waitUntilElementToBeVisibleByCss(CLEAR_BTN).click();
         return this;
     }
-
 
     public HomePage clickCloseButtonInSearchField() {
         waitUntilElementToBeVisibleByXpath(CLOSE_BUTTON).click();
@@ -150,8 +139,6 @@ public class HomePage extends HomeElements {
         return searchElementPresent;
     }
 
-}
-=========
     public HomePage clickAgeGroup() {
         getAgeGroup().click();
         return this;
@@ -162,4 +149,3 @@ public class HomePage extends HomeElements {
         return this;
     }
 }
->>>>>>>>> Temporary merge branch 2
