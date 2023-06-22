@@ -2,6 +2,9 @@ package elements;
 
 import base.AbstractBasePage;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class HomeElements extends AbstractBasePage {
 
@@ -28,4 +31,39 @@ public class HomeElements extends AbstractBasePage {
     //account menu elements
     public static final String LOGIN_BUTTON_ON_ACCOUNT_MENU = "//a[@data-test-id='login-button']";
     public static final String REGISTER_HERE_BUTTON = "//a[@data-test-id='register-button']";
+    public static final String COLLABORATION_BTN = "//span[contains(text(),'Collaborations')]";
+    public static final String SEARCH_BTN ="//button[@type='submit']//div";
+    public static final String SEARCH_INPUT_FIELD = "//input[@placeholder='SEARCH PUMA.COM']";
+    public static final String SEARCH_FIELD = "//button[@data-test-id='search-icon-nav']";
+
+    //men menu elements
+    public static final String SOCCER_SHOES_MEN_CATEGORY = "(//a[@data-link-name='Soccer'])[1]";
+    public static final String BASKETBALL_SHOES_MEN_CATEGORY = "//a[@data-link-name='Basketball']";
+    public static final String HATS_ACCESSORIES_MEN_CATEGORY = "//a[@data-link-name='Hats']";
+    public static final String PRODUCT_SELECT_INPUT = "//select[@data-test-id='product-list-sort-select-input']//option";
+    public static final String PRICE_LOW_TO_HIGH_SORTING = "//select[@data-test-id='product-list-sort-select-input']//option[@value='price-low-to-high']";
+    public static final String PRICE_HIGH_TO_LOW_SORTING = "//select[@data-test-id='product-list-sort-select-input']//option[@value='price-high-to-low']";
+    public static final String NEWEST_PRICE_SORTING = "//select[@data-test-id='product-list-sort-select-input']//option[@value='newest']";
+    public static final String MEN_SOCCER_SHOES_PRICE = "//span[@data-test-id='price']";
+    public static final String LIST_OF_PRICE = "//div[@class='relative flex mobile:flex-col w-full items-start']/div/span[1]";
+
+    public WebElement getPriceLowToHigh() {
+        return waitUntilElementToBeVisibleByXpath(PRICE_LOW_TO_HIGH_SORTING);
+    }
+
+    public WebElement getPriceHighToLow() {
+        return waitUntilElementToBeVisibleByXpath(PRICE_HIGH_TO_LOW_SORTING);
+    }
+
+    public WebElement getNewestPrice() {
+        return waitUntilElementToBeVisibleByXpath(NEWEST_PRICE_SORTING);
+    }
+
+    public List<WebElement> getListOfPrice() {
+        return waitUntilPresenceOfAllElementsByXpath(LIST_OF_PRICE);
+    }
+
+    public List<WebElement> getSortingBtn() {
+        return waitUntilPresenceOfAllElementsByXpath(PRODUCT_SELECT_INPUT);
+    }
 }

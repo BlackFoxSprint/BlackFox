@@ -2,9 +2,6 @@ package pages;
 
 import elements.SportCategoryElements;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 public class SportCategoryPage extends SportCategoryElements {
 
@@ -22,17 +19,9 @@ public class SportCategoryPage extends SportCategoryElements {
         return this;
     }
 
-    public List<WebElement> listProductNames() {
-    return listWaitUntilElementsToBeVisibleByXpath(MOTORSPORT_NAME);
-    }
-
     public SportCategoryPage clickFilterBtn() {
         waitUntilElementToBeClickableByXpath(FILTER_BTN).click();
         return this;
-    }
-
-    public WebElement pumaLogo() {
-        return waitUntilElementToBeVisibleByXpath(PUMA_LOGO);
     }
 
     public SportCategoryPage closeDiscount() {
@@ -41,7 +30,7 @@ public class SportCategoryPage extends SportCategoryElements {
     }
 
     public SportCategoryPage closeFilter() {
-        waitUntilElementToBeClickableByXpath(CLOSE_FILTER_BTN).click();
+        waitUntilElementToBeClickableByCss(CLOSE_FILTER_BTN).click();
         return this;
     }
 
@@ -80,4 +69,18 @@ public class SportCategoryPage extends SportCategoryElements {
         return this;
     }
 
+    public SportCategoryPage clickColorBtn() {
+        waitUntilElementToBeClickableByXpath(COLOR_BTN).click();
+        return this;
+    }
+
+    public SportCategoryPage clickBlackColorBtn() {
+        waitUntilElementToBeClickableByCss(BLACK_COLOR_BTN).click();
+        return this;
+    }
+
+    public SportCategoryPage clickListNameItemsBtn() {
+        waitUntilElementToBeClickableByXpath(MOTORSPORT_NAME).click();
+        return this;
+    }
 }

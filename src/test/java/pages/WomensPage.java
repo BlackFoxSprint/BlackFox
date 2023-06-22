@@ -1,10 +1,10 @@
 package pages;
 
-import elements.WomensElements;
+import base.AbstractBasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class WomensPage extends WomensElements {
+public class WomensPage extends AbstractBasePage {
 
     public WomensPage(WebDriver driver) {
         super(driver);

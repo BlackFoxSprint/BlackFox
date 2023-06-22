@@ -25,8 +25,24 @@ public class HomePage extends HomeElements {
         waitUntilElementToBeClickableByXpath(SELECT_LOCATION_CLOSE_BTN).click();
         return this;
     }
+
     public HomePage clickWomenClassicsCategoryBtn() {
         waitUntilElementToBeVisibleByXpath(WOMEN_CLASSICS_CATEGORY).click();
+        return this;
+    }
+
+    public HomePage clickMenSoccerShoesBtn() {
+        waitUntilElementToBeVisibleByXpath(SOCCER_SHOES_MEN_CATEGORY).click();
+        return this;
+    }
+
+    public HomePage clickMenBasketballShoesBtn() {
+        waitUntilElementToBeVisibleByXpath(BASKETBALL_SHOES_MEN_CATEGORY).click();
+        return this;
+    }
+
+    public HomePage clickMenHatsAccessoriesBtn() {
+        waitUntilElementToBeVisibleByXpath(HATS_ACCESSORIES_MEN_CATEGORY).click();
         return this;
     }
 
@@ -59,7 +75,7 @@ public class HomePage extends HomeElements {
         return this;
     }
 
-    public WebElement getPopUpMenuSaleWomenAccessories(){
+    public WebElement getPopUpMenuSaleWomenAccessories() {
         return waitUntilPresenceOfElementByXpath(POP_UP_MENU_SALE_WOMEN_ACCESSORIES);
     }
 
@@ -75,6 +91,44 @@ public class HomePage extends HomeElements {
 
     public HomePage clickSportBtn() {
         waitUntilElementToBeClickableByXpath(SPORT_BTN).click();
+        return this;
+    }
+
+    public WebElement collaborationBtn() {
+        return waitUntilElementToBeVisibleByXpath(COLLABORATION_BTN);
+    }
+
+    public WebElement searchInputField() {
+        return waitUntilPresenceOfElementByXpath(SEARCH_INPUT_FIELD);
+    }
+
+    public HomePage clickSearchBtn() {
+        waitUntilElementToBeVisibleByXpath(SEARCH_BTN).click();
+        return this;
+    }
+
+    public HomePage clickSearchField() {
+        waitUntilElementToBeVisibleByXpath(SEARCH_FIELD).click();
+        return this;
+    }
+
+    public HomePage clickSortingBtn(int i) {
+        getSortingBtn().get(i).click();
+        return this;
+    }
+
+    public HomePage clickPriceLowToHigh() {
+        getPriceLowToHigh().click();
+        return this;
+    }
+
+    public HomePage clickPriceHowToLow() {
+        getPriceHighToLow().click();
+        return this;
+    }
+
+    public HomePage clickNewestPrice() {
+        getNewestPrice().click();
         return this;
     }
 }

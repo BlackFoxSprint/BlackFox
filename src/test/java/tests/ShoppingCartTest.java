@@ -88,6 +88,6 @@ public class ShoppingCartTest extends AbstractBaseTest {
                 .clickRemoveSecondProductBtn()
                 .clickConfirmBtn();
 
-        assertEquals(amountFirstProductDoubleValue,dPriceFirstProductAnotherValue);
+        assertEquals(amountFirstProductDoubleValue, dPriceFirstProductAnotherValue);
     }
 }

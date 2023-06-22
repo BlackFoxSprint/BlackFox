@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.SportCategoryPage;
 
-import static base.CommonActions.moveCursor;
+import static base.CommonActions.*;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class AllCategoriesTest extends AbstractBaseTest {
@@ -17,13 +17,15 @@ public class AllCategoriesTest extends AbstractBaseTest {
         HomePage homePage = new HomePage(driver);
         SportCategoryPage productPage = new SportCategoryPage(driver);
 
-        homePage.clickSelectLocationCloseBtn()
+        homePage
+                .clickSelectLocationCloseBtn()
                 .clickCookieCloseBtn()
                 .clickSportBtn();
 
         moveCursor(productPage.pumaLogo(), driver);
 
-        productPage.clickFilterBtn()
+        productPage
+                .clickFilterBtn()
                 .clickTeamBtn()
                 .clickBmwMotorSportBtn()
                 .closeFilter()
@@ -32,20 +34,60 @@ public class AllCategoriesTest extends AbstractBaseTest {
         for (WebElement x : productPage.listProductNames())
             assertTrue(x.getText().contains("BMW M Motorsport"));
 
-        productPage.clickFilterBtn()
+        productPage
+                .clickFilterBtn()
                 .clickGenderBtn()
                 .chooseMenCheckbox()
                 .closeGenderBtn()
-                .clickCategoryBtn()
+                .clickCategoryBtn();
+
+        scrollToElement(productPage.clothingElement(), driver);
+
+        productPage
                 .clickClothingBtn()
                 .closeFilter();
 
         for (WebElement x : productPage.listProductNames())
-            assertTrue(x.getText().contains("Men's") || x.getText().contains(  "Monoch"));
+            assertTrue(x.getText().contains("Men's") || x.getText().contains("Monoch"));
 
-        productPage.clickFilterBtn()
-                .clickPriceBtn()
+        productPage
+                .clickFilterBtn();
+
+        scrollToElement(productPage.sizeElement(), driver);
+
+        productPage
+                .clickPriceBtn();
+
+        scrollToElement(productPage.priceElement(), driver);
+
+        productPage
                 .choosePrice50_100()
+                .closeFilter();
+
+        for (WebElement x : productPage.listSalePriceElements()) {
+            double c = Double.valueOf(x.getText().replace("$", ""));
+            assertTrue(c >= 50 && c <= 100);
+        }
+        for (WebElement x : productPage.listFullPriceElements()) {
+            double c = Double.valueOf(x.getText().replace("$", ""));
+            assertTrue(c >= 50 && c <= 100);
+        }
+
+        productPage
+                .clickFilterBtn();
+
+        scrollToElement(productPage.sizeElement(), driver);
+
+        productPage
+                .clickColorBtn();
+
+        scrollToElement(productPage.colorBtnElement(), driver);
+
+        productPage
+                .clickBlackColorBtn()
                 .closeFilter()
+                .clickListNameItemsBtn();
+
+        assertTrue(productPage.describeColorElement().getText().contains("Black"));
     }
 }
