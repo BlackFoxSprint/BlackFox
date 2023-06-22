@@ -81,7 +81,6 @@ public class HomePage extends HomeElements {
     }
 
     public HomePage clickCookieCloseBtn() {
-        waitUntilElementToBeClickableByCss(COOKIE_CLOSE_BTN);
         getCookieCloseBtn().click();
         return this;
     }
@@ -116,6 +115,11 @@ public class HomePage extends HomeElements {
         return this;
     }
 
+    public HomePage clickGetClickHereToExploreCareers() {
+        getClickHereToExploreCareers().click();
+        return this;
+    }
+  
     public HomePage clickClearBtn() {
         waitUntilElementToBeVisibleByCss(CLEAR_BTN).click();
         return this;

@@ -21,7 +21,12 @@ public class HomeElements extends AbstractBasePage {
     private static final String BOYS_SUEDE_CATEGORY = "(//a[@data-link-name='Suede'])[1]";
     protected static final String SELECT_LOCATION_CLOSE_BTN = dataTestId("close-btn");
     protected static final String COOKIE_CLOSE_BTN = dataTestId("cookie-banner-close-btn");
-    private static final String POP_UP_MENU_SALE_WOMEN_ACCESSORIES = "//a[@href='/us/en/sale/womens-sale/accessories']";
+    private static final String CLICK_HERE_TO_EXPLORE_CAREERS = "//section//a[text() = 'CLICK HERE']";
+    protected static final String POP_UP_MENU_SALE_WOMEN_ACCESSORIES = "//a[@href='/us/en/sale/womens-sale/accessories']";
+
+    //account menu elements
+    public static final String RETURN_HOME_PAGE_PUMA_ICON = dataTestId("main-nav-home-link");
+    public static final String ACCOUNT_ICON_BUTTON = dataTestId("account-button");
 
     //account menu elements
     public static final String LOGIN_BUTTON_ON_ACCOUNT_MENU = dataTestId("login-button");
@@ -40,7 +45,10 @@ public class HomeElements extends AbstractBasePage {
     private static final String PRODUCT_SELECT_INPUT = "//select[@data-test-id='product-list-sort-select-input']//option";
     private static final String BASKETBALL_SHOES_MEN_CATEGORY = "//a[@data-link-name='Basketball']";
     private static final String HATS_ACCESSORIES_MEN_CATEGORY = "//a[@data-link-name='Hats']";
-
+    public static final String SEARCH_FIELD = dataTestId("search-icon-nav");
+    public static final String SEARCH_FIELD = dataTestId("search-button-nav");
+    public static final String PRODUCT_SELECT_INPUT = "//select[@data-test-id='product-list-sort-select-input']//option";
+ 
     //search field elements
     public static final String CLEAR_BTN = dataTestId("search-flyout-form-clear");
     public static final String CLOSE_BUTTON = "(//button[@type='button'])[3]";
@@ -59,7 +67,9 @@ public class HomeElements extends AbstractBasePage {
     protected WebElement getPriceHighToLow() {
         return waitUntilElementToBeVisibleByXpath(PRICE_HIGH_TO_LOW_SORTING);
     }
-
+    public WebElement getClickHereToExploreCareers() {
+        return waitUntilElementToBeVisibleByXpath(CLICK_HERE_TO_EXPLORE_CAREERS);
+    }
     protected WebElement getNewestPrice() {
         return waitUntilElementToBeVisibleByXpath(NEWEST_PRICE_SORTING);
     }

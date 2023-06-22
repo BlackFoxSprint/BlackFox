@@ -9,7 +9,7 @@ public class SelectProductElements extends AbstractBasePage {
     public SelectProductElements(WebDriver driver) {
         super(driver);
     }
-
+  
     private static final String PRODUCT_TITTLE = dataTestId("pdp-title");
     private static final String PRODUCT_PRICE = "//div[@class='flex flex-col pb-1']/span[1]";
 

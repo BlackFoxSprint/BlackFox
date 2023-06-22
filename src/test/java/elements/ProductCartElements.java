@@ -13,6 +13,7 @@ public class ProductCartElements extends AbstractBasePage {
     private static final String ADD_TO_CART_BTN = dataTestId("pdp-add-to-cart");
     public static final String VIEW_CART_BTN = dataTestId("minicart-cart-link");
     public static final String SIZE_FIELD = "(//label[@data-disabled='false'])[1]//span[@data-content='size-value']";
+    public static final String SIZE_VALUE = "(//span[@data-content='size-value'])[1]";
 
     protected WebElement getAddToCartBtn() {
         return waitUntilElementToBeClickableByCss(ADD_TO_CART_BTN);

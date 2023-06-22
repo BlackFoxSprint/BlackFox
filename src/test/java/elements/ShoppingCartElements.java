@@ -17,11 +17,12 @@ public class ShoppingCartElements extends AbstractBasePage {
     private static final String CART_PRODUCT_TOTAL_PRICE = dataTestId("estimated-total");
     private static final String CONFIRM_BTN = dataTestId("confirm-button");
     private final String CHECKOUT_BTN = dataTestId("cart-summary-checkout");
+    public static final String VALUE_BTN = "(//select[@data-test-id='quantity-select-input'])[%s]";
 
     protected WebElement getRemoveSecondProductBtn() {
         return waitUntilElementToBeClickableByXpath(REMOVE_SECOND_PRODUCT_BTN);
     }
-
+  
     protected WebElement getCartProductTotalPrice() {
         return waitUntilElementToBeClickableByCss(CART_PRODUCT_TOTAL_PRICE);
     }
@@ -29,9 +30,11 @@ public class ShoppingCartElements extends AbstractBasePage {
     protected WebElement getCartProductPrice(String number) {
         return waitUntilElementToBeVisibleByXpath(String.format(CART_PRODUCT_PRICE, number));
     }
+  
     protected WebElement getConfirmBtn() {
        return waitUntilElementToBeVisibleByCss(CONFIRM_BTN);
     }
+  
     protected WebElement getCheckoutBtn() {
         return waitUntilElementToBeClickableByCss(CHECKOUT_BTN);
     }

@@ -84,4 +84,9 @@ abstract public class AbstractBasePage {
         final String cssSelector = String.format("[data-test-id='%s']", id);
         return cssSelector;
     }
+
+    public static String dataAutomationId(String id) {
+        final String cssSelector = String.format("[data-automation-id='%s']", id);
+        return cssSelector;
+    }
 }

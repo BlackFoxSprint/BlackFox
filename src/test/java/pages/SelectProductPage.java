@@ -4,6 +4,7 @@ import elements.SelectProductElements;
 import org.openqa.selenium.WebDriver;
 
 public class SelectProductPage extends SelectProductElements {
+  
     public SelectProductPage(WebDriver driver) {
         super(driver);
     }
@@ -11,6 +12,7 @@ public class SelectProductPage extends SelectProductElements {
     public String getTextProductTittle() {
         return getProductTittle().getText();
     }
+  
     public String getTextProductPrice() {
         return getProductPrice().getText();
     }
