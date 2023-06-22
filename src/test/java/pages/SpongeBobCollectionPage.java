@@ -27,22 +27,22 @@ public class SpongeBobCollectionPage extends SpongeBobCollectionElements {
     }
 
     public SpongeBobCollectionPage clickFilterBtn() {
-         waitUntilElementToBeClickableByXpath(FILTER_BTN).click();
+        waitUntilElementToBeClickableByXpath(FILTER_BTN).click();
         return this;
     }
 
     public SpongeBobCollectionPage clickGirlsCategory() {
-         waitUntilPresenceOfElementByXpath(GIRLS_CATEGORY).click();
+        waitUntilPresenceOfElementByXpath(GIRLS_CATEGORY).click();
         return this;
     }
 
     public SpongeBobCollectionPage clickMenCategory() {
-         waitUntilElementToBeClickableByXpath(MEN_CATEGORY).click();
+        waitUntilElementToBeClickableByXpath(MEN_CATEGORY).click();
         return this;
     }
 
     public SpongeBobCollectionPage clickUnisexCategory() {
-         waitUntilElementToBeClickableByXpath(UNISEX_CATEGORY).click();
+        waitUntilElementToBeClickableByXpath(UNISEX_CATEGORY).click();
         return this;
     }
 
@@ -93,22 +93,22 @@ public class SpongeBobCollectionPage extends SpongeBobCollectionElements {
     }
 
     public WebElement cityField() {
-         return waitUntilElementToBeClickableByXpath(CITY_FIELD);
+        return waitUntilElementToBeClickableByXpath(CITY_FIELD);
     }
 
     public WebElement postalCodeField() {
-         return waitUntilElementToBeClickableByXpath(POSTAL_CODE_FIELD);
+        return waitUntilElementToBeClickableByXpath(POSTAL_CODE_FIELD);
     }
 
     public WebElement emailField() {
-         return waitUntilElementToBeClickableByXpath(EMAIL_FIELD);
+        return waitUntilElementToBeClickableByXpath(EMAIL_FIELD);
     }
 
     public WebElement companyField() {
-         return waitUntilElementToBeClickableByXpath(COMPANY_FIELD);
+        return waitUntilElementToBeClickableByXpath(COMPANY_FIELD);
     }
 
     public WebElement phoneNumberField() {
-         return waitUntilElementToBeClickableByXpath(PHONE_NUMBER_FIELD);
+        return waitUntilElementToBeClickableByXpath(PHONE_NUMBER_FIELD);
     }
 }

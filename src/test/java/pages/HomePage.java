@@ -1,9 +1,11 @@
 package pages;
 
 import elements.HomeElements;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import static base.CommonActions.moveCursor;
+import static java.lang.Thread.sleep;
 
 public class HomePage extends HomeElements {
 
@@ -18,6 +20,7 @@ public class HomePage extends HomeElements {
 
     public HomePage clickSelectLocationCloseBtn() {
         getSelectLocationCloseBtn().click();
+        waitUntilElementToBeClickableByCss(SELECT_LOCATION_CLOSE_BTN).click();
         return this;
     }
 
@@ -68,6 +71,7 @@ public class HomePage extends HomeElements {
 
     public HomePage clickReturnHomePagePumaIcon() {
         getReturnHomePagePumaIcon().click();
+        waitUntilElementToBeClickableByCss(RETURN_HOME_PAGE_PUMA_ICON).click();
         return this;
     }
 
@@ -78,6 +82,7 @@ public class HomePage extends HomeElements {
 
     public HomePage clickCookieCloseBtn() {
         getCookieCloseBtn().click();
+        waitUntilElementToBeClickableByCss(COOKIE_CLOSE_BTN);
         return this;
     }
 
@@ -119,5 +124,29 @@ public class HomePage extends HomeElements {
     public HomePage clickLittleKidsAgeGroup() {
         getLittleKidsAgeGroup().click();
         return this;
+    }
+
+    public HomePage clickClearBtn() {
+        waitUntilElementToBeVisibleByCss(CLEAR_BTN).click();
+        return this;
+    }
+
+
+    public HomePage clickCloseButtonInSearchField() {
+        waitUntilElementToBeVisibleByXpath(CLOSE_BUTTON).click();
+        return this;
+    }
+
+    public boolean inputFieldIsNotPresent() {
+        By elementLocator = By.xpath(INPUT_FIELD_VISIBILITY);
+        boolean searchFieldElementPresent = driver.findElements(elementLocator).isEmpty();
+        return searchFieldElementPresent;
+    }
+
+    public boolean searchBarIsNotPresent() throws InterruptedException {
+        sleep(1000);
+        By elementLocator = By.xpath(SEARCH_BAR_VISIBILITY);
+        boolean searchElementPresent = driver.findElements(elementLocator).isEmpty();
+        return searchElementPresent;
     }
 }
