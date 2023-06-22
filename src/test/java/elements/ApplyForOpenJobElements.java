@@ -11,18 +11,18 @@ public class ApplyForOpenJobElements extends AbstractBasePage {
     }
 
     private static final String APPLY_NOW_BUTTON = "//a[@class='btn btn-cta']";
-    private static final String ENTER_USERS_EMAIL = "//input[@data-automation-id='email']";
-    private static final String ENTER_USERS_PASSWORD = "//input[@data-automation-id='password']";
+    private static final String ENTER_USERS_EMAIL = dataAutomationId("email");
+    private static final String ENTER_USERS_PASSWORD = dataAutomationId("password");
 
-    public WebElement getApplyNowBtn() {
+    protected WebElement getApplyNowBtn() {
         return waitUntilElementToBeClickableByXpath(APPLY_NOW_BUTTON);
     }
 
-    public WebElement getInputUsersEmailToApply() {
-        return waitUntilElementToBeClickableByXpath(ENTER_USERS_EMAIL);
+    protected WebElement getInputUsersEmailToApply() {
+        return waitUntilElementToBeClickableByCss(ENTER_USERS_EMAIL);
     }
 
-    public WebElement getInputUsersPasswordToApply() {
-        return waitUntilElementToBeClickableByXpath(ENTER_USERS_PASSWORD);
+    protected WebElement getInputUsersPasswordToApply() {
+        return waitUntilElementToBeClickableByCss(ENTER_USERS_PASSWORD);
     }
 }

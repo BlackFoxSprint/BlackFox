@@ -25,7 +25,6 @@ public class CheckAndApplyForOpenVacancy extends AbstractBaseTest {
 
         careersPage
                 .clickExploreNowCorporateJobs()
-                //test fail at this step from time to time
                 .clickClearFilters()
                 .clickCorporatePrefilter()
                 .clickAcceptAllCookies()
@@ -35,7 +34,8 @@ public class CheckAndApplyForOpenVacancy extends AbstractBaseTest {
                 .clickCityOfLocations("Cape Town");
 
         for (int j = 0; j < careersPage.getSelectedOpenJobsList().size(); j++) {
-            softAssert.assertTrue(careersPage.getSelectedOpenJobsCityOfLocation().get(j).getText().contains("Cape"), "Location filter doesn't work correctly.");
+            softAssert.assertTrue(careersPage.getSelectedOpenJobsCityOfLocation().get(j).getText().contains("Cape"),
+                    "Location filter doesn't work correctly.");
         }
 
         careersPage
@@ -49,18 +49,19 @@ public class CheckAndApplyForOpenVacancy extends AbstractBaseTest {
                 .clickCityOfLocations("Salzburg");
 
         for (int j = 0; j < careersPage.getSelectedOpenJobsList().size(); j++) {
-            softAssert.assertTrue(careersPage.getSelectedOpenJobsCityOfLocation().get(j).getText().contains("Salzburg"), "Location filter doesn't work correctly.");
+            softAssert.assertTrue(careersPage.getSelectedOpenJobsCityOfLocation().get(j).getText().contains("Salzburg"),
+                    "Location filter doesn't work correctly.");
         }
 
         careersPage
                 .clickBackToPreviousStepSelectingLocation()
                 .clickBackToPreviousStepSelectingLocation()
                 .clickBackToPreviousStepSelectingLocation()
-                //test fail at this step from time to time
                 .clickTeamsFilter()
                 .clickSectionOfTeamsFilter("Business Solutions");
 
-        softAssert.assertTrue(careersPage.getResultNotFound().isDisplayed(), "Locations and teams filters don't work correctly at the same time.");
+        softAssert.assertTrue(careersPage.getResultNotFound().isDisplayed(),
+                "Locations and teams filters don't work correctly at the same time.");
 
         careersPage
                 .clickClearFilters()
@@ -68,7 +69,10 @@ public class CheckAndApplyForOpenVacancy extends AbstractBaseTest {
                 .clickSectionOfTeamsFilter("E-Commerce");
 
         for (int j = 0; j < careersPage.getSelectedOpenJobsList().size(); j++)
-            softAssert.assertTrue(careersPage.getSelectedOpenJobsSectionTeamsFilter().get(j).getText().contains("E-Commerce") || careersPage.getSelectedOpenJobsSectionTeamsFilter().get(j).getText().contains("Design"), "Two filters from section team filters don't work correctly at the same time.");
+            softAssert.assertTrue(careersPage.getSelectedOpenJobsSectionTeamsFilter().get(j).getText().
+                    contains("E-Commerce") || careersPage.getSelectedOpenJobsSectionTeamsFilter().get(j).
+                            getText().contains("Design"),
+                    "Two filters from section team filters don't work correctly at the same time.");
 
         careersPage
                 .clickClearFilters()
@@ -77,22 +81,22 @@ public class CheckAndApplyForOpenVacancy extends AbstractBaseTest {
                 .clickSectionOfFutureTalentsFilter("Apprentices");
 
         for (int j = 0; j < careersPage.getSelectedOpenJobsList().size(); j++) {
-            softAssert.assertTrue(careersPage.getSelectedOpenJobsListWithRegardToFutureTalentsFilter().get(j).getText().contains("Apprentices"), "Future Talents filter doesn't work correctly.");
+            softAssert.assertTrue(careersPage.getSelectedOpenJobsListWithRegardToFutureTalentsFilter().get(j).
+                    getText().contains("Apprentices"), "Future Talents filter doesn't work correctly.");
         }
 
         careersPage
                 .clickClearFilters()
                 .clickSectionOfFutureTalentsFilter("Interns")
-                //test fail at this step from time to time
                 .clickOnNeededOpenJob();
 
         applyForOpenJobPage
-                //test fail at this step from time to time
                 .clickApplyNowBtn()
                 .enterUsersEmailToApplyForOpenJob()
                 .enterUsersPasswordToApplyForOpenJob();
 
-        softAssert.assertTrue(careersPage.checkPresenceOfSignInBtn().getText().contains("Sign In"), "Sign In Btn is not visible for the user.");
+        softAssert.assertTrue(careersPage.checkPresenceOfSignInBtn().getText().contains("Sign In"),
+                "Sign In Btn is not visible for the user.");
         softAssert.assertAll();
     }
 }

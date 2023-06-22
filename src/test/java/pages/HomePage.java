@@ -85,7 +85,7 @@ public class HomePage extends HomeElements {
     }
 
     public HomePage clickCookieCloseBtn() {
-        waitUntilElementToBeClickableByXpath(COOKIE_CLOSE_BTN);
+        waitUntilElementToBeClickableByXpath(COOKIE_CLOSE_BTN).click();
         return this;
     }
 
