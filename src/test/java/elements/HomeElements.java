@@ -30,7 +30,6 @@ public class HomeElements extends AbstractBasePage {
     public static final String SEARCH_BTN = "//button[@type='submit']//div";
     public static final String SEARCH_INPUT_FIELD = "//input[@placeholder='SEARCH PUMA.COM']";
     public static final String SEARCH_FIELD = dataTestId("search-icon-nav");
-    public static final String SEARCH_FIELD = dataTestId("search-button-nav");
 
     //men menu elements
     public static final String SOCCER_SHOES_MEN_CATEGORY = "(//a[@data-link-name='Soccer'])[1]";
