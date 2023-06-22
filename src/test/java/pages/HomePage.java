@@ -105,7 +105,7 @@ public class HomePage extends HomeElements {
     }
 
     public HomePage clickSearchField() {
-        waitUntilElementToBeVisibleByXpath(SEARCH_FIELD).click();
+        waitUntilElementToBeVisibleByCss(SEARCH_FIELD).click();
         return this;
     }
 
@@ -130,7 +130,7 @@ public class HomePage extends HomeElements {
     }
 
     public HomePage clickClearBtn() {
-        waitUntilElementToBeVisibleByXpath(CLEAR_BTN).click();
+        waitUntilElementToBeVisibleByCss(CLEAR_BTN).click();
         return this;
     }
 

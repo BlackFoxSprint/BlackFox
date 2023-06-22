@@ -27,7 +27,7 @@ public class HomeElements extends AbstractBasePage {
     public static final String COLLABORATION_BTN = "//span[contains(text(),'Collaborations')]";
     public static final String SEARCH_BTN = "//button[@type='submit']//div";
     public static final String SEARCH_INPUT_FIELD = "//input[@placeholder='SEARCH PUMA.COM']";
-    public static final String SEARCH_FIELD = "//button[@data-test-id='search-button-nav']";
+    public static final String SEARCH_FIELD = dataTestId("search-button-nav");
 
     //men menu elements
     public static final String SOCCER_SHOES_MEN_CATEGORY = "(//a[@data-link-name='Soccer'])[1]";
@@ -41,7 +41,7 @@ public class HomeElements extends AbstractBasePage {
     public static final String LIST_OF_PRICE = "//div[@class='relative flex mobile:flex-col w-full items-start']/div/span[1]";
 
     //search field elements
-    public static final String CLEAR_BTN = "//button[@data-test-id='search-flyout-form-clear']";
+    public static final String CLEAR_BTN = dataTestId("search-flyout-form-clear");
     public static final String CLOSE_BUTTON = "(//button[@type='button'])[3]";
     public static final String INPUT_FIELD_VISIBILITY = "//div[@class='h-6 w-px bg-neutral-30']";
     public static final String SEARCH_BAR_VISIBILITY = "//div[@class='flex flex-shrink-0 sh items-center w-full h-[104px] lg:h-[120px] bg-neutral-10']";
