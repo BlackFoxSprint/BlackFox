@@ -84,4 +84,9 @@ public class CommonActions {
 
         return elements;
     }
+
+    public static void scrollByPixel(WebDriver driver, String px) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0," + px + ")");
+    }
 }

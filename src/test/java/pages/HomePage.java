@@ -3,7 +3,6 @@ package pages;
 import elements.HomeElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import static base.CommonActions.moveCursor;
 import static java.lang.Thread.sleep;
@@ -12,10 +11,6 @@ public class HomePage extends HomeElements {
 
     public HomePage(WebDriver driver) {
         super(driver);
-    }
-
-    public WebElement getCategory(String category) {
-        return waitUntilElementToBeVisibleByXpath(String.format(CATEGORY, category));
     }
 
     public HomePage clickOnCategory(String category) {
@@ -48,27 +43,23 @@ public class HomePage extends HomeElements {
         return this;
     }
 
-    public WebElement getSaleCategory() {
-        return waitUntilElementToBeVisibleByXpath("//a[@data-link-name='Sale']");
-    }
-
     public HomePage moveToCategory(String category) {
         moveCursor(getCategory(category), driver);
         return this;
     }
 
     public HomePage clickAccountButton() {
-        waitUntilElementToBeClickableByXpath(ACCOUNT_ICON_BUTTON).click();
+        waitUntilElementToBeClickableByCss(ACCOUNT_ICON_BUTTON).click();
         return this;
     }
 
     public HomePage clickRegisterHereButton() {
-        waitUntilElementToBeClickableByXpath(REGISTER_HERE_BUTTON).click();
+        waitUntilElementToBeClickableByCss(REGISTER_HERE_BUTTON).click();
         return this;
     }
 
     public HomePage clickLoginButtonOnAccountMenu() {
-        waitUntilElementToBeClickableByXpath(LOGIN_BUTTON_ON_ACCOUNT_MENU).click();
+        waitUntilElementToBeClickableByCss(LOGIN_BUTTON_ON_ACCOUNT_MENU).click();
         return this;
     }
 
@@ -77,26 +68,15 @@ public class HomePage extends HomeElements {
         return this;
     }
 
-    public WebElement getPopUpMenuSaleWomenAccessories() {
-        return waitUntilPresenceOfElementByXpath(POP_UP_MENU_SALE_WOMEN_ACCESSORIES);
-    }
-
     public HomePage clickPopUpMenuSaleWomenAccessories() {
         getPopUpMenuSaleWomenAccessories().click();
         return this;
     }
 
     public HomePage clickCookieCloseBtn() {
+        waitUntilElementToBeClickableByCss(COOKIE_CLOSE_BTN).click();
         waitUntilElementToBeClickableByCss(COOKIE_CLOSE_BTN);
         return this;
-    }
-
-    public WebElement collaborationBtn() {
-        return waitUntilElementToBeVisibleByXpath(COLLABORATION_BTN);
-    }
-
-    public WebElement searchInputField() {
-        return waitUntilPresenceOfElementByXpath(SEARCH_INPUT_FIELD);
     }
 
     public HomePage clickSearchBtn() {
@@ -134,7 +114,6 @@ public class HomePage extends HomeElements {
         return this;
     }
 
-
     public HomePage clickCloseButtonInSearchField() {
         waitUntilElementToBeVisibleByXpath(CLOSE_BUTTON).click();
         return this;
@@ -152,5 +131,4 @@ public class HomePage extends HomeElements {
         boolean searchElementPresent = driver.findElements(elementLocator).isEmpty();
         return searchElementPresent;
     }
-
 }
