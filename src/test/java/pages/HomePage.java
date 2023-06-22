@@ -74,8 +74,7 @@ public class HomePage extends HomeElements {
     }
 
     public HomePage clickCookieCloseBtn() {
-        waitUntilElementToBeClickableByCss(COOKIE_CLOSE_BTN).click();
-        waitUntilElementToBeClickableByCss(COOKIE_CLOSE_BTN);
+        waitUntilElementToBeClickableByXpath(COOKIE_CLOSE_BTN).click();
         return this;
     }
 
@@ -108,6 +107,12 @@ public class HomePage extends HomeElements {
         getNewestPrice().click();
         return this;
     }
+
+    public HomePage clickGetClickHereToExploreCareers() {
+        getClickHereToExploreCareers().click();
+        return this;
+    }
+}
 
     public HomePage clickClearBtn() {
         waitUntilElementToBeVisibleByCss(CLEAR_BTN).click();
