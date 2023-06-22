@@ -23,10 +23,13 @@ public class HomeElements extends AbstractBasePage {
     protected static final String COOKIE_CLOSE_BTN = dataTestId("cookie-banner-close-btn");
     private static final String CLICK_HERE_TO_EXPLORE_CAREERS = "//section//a[text() = 'CLICK HERE']";
     protected static final String POP_UP_MENU_SALE_WOMEN_ACCESSORIES = "//a[@href='/us/en/sale/womens-sale/accessories']";
+<<<<<<< Updated upstream
 
     //account menu elements
     public static final String RETURN_HOME_PAGE_PUMA_ICON = dataTestId("main-nav-home-link");
     public static final String ACCOUNT_ICON_BUTTON = dataTestId("account-button");
+=======
+>>>>>>> Stashed changes
 
     //account menu elements
     public static final String LOGIN_BUTTON_ON_ACCOUNT_MENU = dataTestId("login-button");
@@ -46,15 +49,19 @@ public class HomeElements extends AbstractBasePage {
     private static final String BASKETBALL_SHOES_MEN_CATEGORY = "//a[@data-link-name='Basketball']";
     private static final String HATS_ACCESSORIES_MEN_CATEGORY = "//a[@data-link-name='Hats']";
     public static final String SEARCH_FIELD = dataTestId("search-icon-nav");
+<<<<<<< Updated upstream
     public static final String SEARCH_FIELD = dataTestId("search-button-nav");
     public static final String PRODUCT_SELECT_INPUT = "//select[@data-test-id='product-list-sort-select-input']//option";
  
+=======
+
+>>>>>>> Stashed changes
     //search field elements
     public static final String CLEAR_BTN = dataTestId("search-flyout-form-clear");
     public static final String CLOSE_BUTTON = "(//button[@type='button'])[3]";
     public static final String INPUT_FIELD_VISIBILITY = "//div[@class='h-6 w-px bg-neutral-30']";
     public static final String SEARCH_BAR_VISIBILITY = "//div[@class='flex flex-shrink-0 sh items-center w-full h-[104px] lg:h-[120px] bg-neutral-10']";
-    public static final String SEARCH_FIELD = dataTestId("search-icon-nav");
+
 
     //filter panel
     private static final String AGE_GROUP = "//button[@aria-controls='ageGroup-filter-dropdown']";
@@ -67,9 +74,17 @@ public class HomeElements extends AbstractBasePage {
     protected WebElement getPriceHighToLow() {
         return waitUntilElementToBeVisibleByXpath(PRICE_HIGH_TO_LOW_SORTING);
     }
+<<<<<<< Updated upstream
     public WebElement getClickHereToExploreCareers() {
         return waitUntilElementToBeVisibleByXpath(CLICK_HERE_TO_EXPLORE_CAREERS);
     }
+=======
+
+    public WebElement getClickHereToExploreCareers() {
+        return waitUntilElementToBeVisibleByXpath(CLICK_HERE_TO_EXPLORE_CAREERS);
+    }
+
+>>>>>>> Stashed changes
     protected WebElement getNewestPrice() {
         return waitUntilElementToBeVisibleByXpath(NEWEST_PRICE_SORTING);
     }
