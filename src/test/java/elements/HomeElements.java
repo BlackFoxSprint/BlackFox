@@ -24,10 +24,13 @@ public class HomeElements extends AbstractBasePage {
     private static final String CLICK_HERE_TO_EXPLORE_CAREERS = "//section//a[text() = 'CLICK HERE']";
     protected static final String POP_UP_MENU_SALE_WOMEN_ACCESSORIES = "//a[@href='/us/en/sale/womens-sale/accessories']";
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
     //account menu elements
     public static final String RETURN_HOME_PAGE_PUMA_ICON = dataTestId("main-nav-home-link");
     public static final String ACCOUNT_ICON_BUTTON = dataTestId("account-button");
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -50,10 +53,13 @@ public class HomeElements extends AbstractBasePage {
     private static final String HATS_ACCESSORIES_MEN_CATEGORY = "//a[@data-link-name='Hats']";
     public static final String SEARCH_FIELD = dataTestId("search-icon-nav");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public static final String SEARCH_FIELD = dataTestId("search-button-nav");
     public static final String PRODUCT_SELECT_INPUT = "//select[@data-test-id='product-list-sort-select-input']//option";
  
 =======
+=======
+>>>>>>> Stashed changes
 
 >>>>>>> Stashed changes
     //search field elements
@@ -84,6 +90,9 @@ public class HomeElements extends AbstractBasePage {
         return waitUntilElementToBeVisibleByXpath(CLICK_HERE_TO_EXPLORE_CAREERS);
     }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     protected WebElement getNewestPrice() {
         return waitUntilElementToBeVisibleByXpath(NEWEST_PRICE_SORTING);
