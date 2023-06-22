@@ -1,4 +1,4 @@
-package tests;
+package Tests;
 
 import base.AbstractBaseTest;
 import org.openqa.selenium.WebElement;
@@ -10,6 +10,7 @@ import java.util.List;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class SortingMensShoesTest extends AbstractBaseTest {
+  
     @Test
     public void checkSortingMenShoes() {
         HomePage homePage = new HomePage(driver);
@@ -28,9 +29,9 @@ public class SortingMensShoesTest extends AbstractBaseTest {
             double priceFirst = Double.parseDouble(listPrice.get(i).getText().replace("$", ""));
             double priceSecond = Double.parseDouble(listPrice.get(i + 1).getText().replace("$", ""));
 
-//            System.out.println("Price first: " + priceFirst + ", Price next: " + priceSecond);
             assertTrue(priceFirst <= priceSecond);
         }
+      
         homePage
                 .moveToCategory("Men")
                 .clickMenBasketballShoesBtn()
@@ -44,16 +45,16 @@ public class SortingMensShoesTest extends AbstractBaseTest {
                     replace("$", "").replace(",", ""));
             double priceSecond = Double.parseDouble(newListPrice.get(i + 1).getText().replace("$", ""));
 
-//            System.out.println("Price first: " + priceFirst + ", Price next: " + priceSecond);
             assertTrue(priceFirst >= priceSecond);
         }
+      
         homePage
                 .moveToCategory("Men")
                 .clickMenHatsAccessoriesBtn()
                 .clickSortingBtn(3)
                 .clickNewestPrice();
 
-        for (WebElement newProduct : homePage.listNewProduct()) {
+        for (WebElement newProduct : homePage.getListNewProduct()) {
             assertTrue(newProduct.getText().contains("NEW"));
         }
     }

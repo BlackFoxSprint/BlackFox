@@ -20,26 +20,32 @@ public class HomePage extends HomeElements {
 
     public HomePage clickSelectLocationCloseBtn() {
         waitUntilElementToBeClickableByCss(SELECT_LOCATION_CLOSE_BTN).click();
+        getSelectLocationCloseBtn().click();
         return this;
     }
 
     public HomePage clickWomenClassicsCategoryBtn() {
-        waitUntilElementToBeVisibleByXpath(WOMEN_CLASSICS_CATEGORY).click();
+        getWomenClassicsCategoryBtn().click();
+        return this;
+    }
+
+    public HomePage clickBoysSuedeCategoryBtn() {
+        getBoysSuedeCategoryBtn().click();
         return this;
     }
 
     public HomePage clickMenSoccerShoesBtn() {
-        waitUntilElementToBeVisibleByXpath(SOCCER_SHOES_MEN_CATEGORY).click();
+        getMenSoccerShoesBtn().click();
         return this;
     }
 
     public HomePage clickMenBasketballShoesBtn() {
-        waitUntilElementToBeVisibleByXpath(BASKETBALL_SHOES_MEN_CATEGORY).click();
+        getMenBasketballShoesBtn().click();
         return this;
     }
 
     public HomePage clickMenHatsAccessoriesBtn() {
-        waitUntilElementToBeVisibleByXpath(HATS_ACCESSORIES_MEN_CATEGORY).click();
+        getMenHatsAccessoriesBtn().click();
         return this;
     }
 
@@ -65,6 +71,7 @@ public class HomePage extends HomeElements {
 
     public HomePage clickReturnHomePagePumaIcon() {
         waitUntilElementToBeClickableByCss(RETURN_HOME_PAGE_PUMA_ICON).click();
+        getReturnHomePagePumaIcon().click();
         return this;
     }
 
@@ -74,8 +81,7 @@ public class HomePage extends HomeElements {
     }
 
     public HomePage clickCookieCloseBtn() {
-        waitUntilElementToBeClickableByXpath(COOKIE_CLOSE_BTN).click();
-        waitUntilElementToBeClickableByXpath(CLOSE_COOKIE).click();
+        getCookieCloseBtn().click();
         return this;
     }
 
@@ -140,5 +146,15 @@ public class HomePage extends HomeElements {
         By elementLocator = By.xpath(SEARCH_BAR_VISIBILITY);
         boolean searchElementPresent = driver.findElements(elementLocator).isEmpty();
         return searchElementPresent;
+    }
+
+    public HomePage clickAgeGroup() {
+        getAgeGroup().click();
+        return this;
+    }
+
+    public HomePage clickLittleKidsAgeGroup() {
+        getLittleKidsAgeGroup().click();
+        return this;
     }
 }

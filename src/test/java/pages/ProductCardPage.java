@@ -18,7 +18,7 @@ public class ProductCardPage extends ProductCartElements {
     }
 
     public ProductCardPage clickViewCart() {
-        waitUntilElementToBeClickableByCss(VIEW_CART_BTN).click();
+        getViewCart().click();
         return this;
     }
 
