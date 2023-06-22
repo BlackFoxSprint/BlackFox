@@ -8,10 +8,10 @@ public class SelectProductPage extends SelectProductElements {
         super(driver);
     }
 
-    public String getProductTittle() {
-        return waitUntilElementToBeVisibleByCss(PRODUCT_TITTLE).getText();
+    public String getTextProductTittle() {
+        return getProductTittle().getText();
     }
-    public String getProductPrice() {
-        return waitUntilElementToBeVisibleByXpath(PRODUCT_PRICE).getText();
+    public String getTextProductPrice() {
+        return getProductPrice().getText();
     }
 }

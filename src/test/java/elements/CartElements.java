@@ -21,7 +21,7 @@ public class CartElements extends AbstractBasePage {
     protected final String PRICE_ON_MODAL_WINDOW_ADDED_TO_CART = dataTestId("item-price-base");
     protected final String VIEW_CART_AND_CHECKOUT_ON_MODAL_WINDOW_ADDED_TO_CART = dataTestId("minicart-cart-link");
 
-    public WebElement getViewCartAndCheckoutOnModalWindowBtn() {
+    protected WebElement getViewCartAndCheckoutOnModalWindowBtn() {
         return waitUntilElementToBeClickableByCss(VIEW_CART_AND_CHECKOUT_ON_MODAL_WINDOW_ADDED_TO_CART);
     }
 }

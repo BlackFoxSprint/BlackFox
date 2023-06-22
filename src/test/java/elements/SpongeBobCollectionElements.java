@@ -4,6 +4,7 @@ import base.AbstractBasePage;
 import org.openqa.selenium.WebDriver;
 
 public class SpongeBobCollectionElements extends AbstractBasePage {
+
     public SpongeBobCollectionElements(WebDriver driver) {
         super(driver);
     }

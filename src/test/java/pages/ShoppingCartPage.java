@@ -19,32 +19,32 @@ public class ShoppingCartPage extends ShoppingCartElements {
         return waitUntilElementToBeVisibleByXpath(String.format(CART_PRODUCT_TITTLE, number)).getText();
     }
 
-    public String getCartProductPrice(String number) {
-        return waitUntilElementToBeVisibleByXpath(String.format(CART_PRODUCT_PRICE, number)).getText();
+    public String getTextCartProductPrice(String number) {
+        return getCartProductPrice(number).getText();
     }
 
-    public String getCartProductTotalPrice() {
-        return waitUntilElementToBeVisibleByCss(CART_PRODUCT_TOTAL_PRICE).getText();
+    public String getTextCartProductTotalPrice() {
+        return getCartProductTotalPrice().getText();
     }
 
     public ShoppingCartPage clickRemoveSecondProductBtn() {
-        waitUntilElementToBeVisibleByXpath(REMOVE_SECOND_PRODUCT_BTN).click();
+        getRemoveSecondProductBtn().click();
         return this;
     }
 
     public ShoppingCartPage clickConfirmBtn() {
-        waitUntilElementToBeVisibleByCss(CONFIRM_BTN).click();
-        return this;
-    }
-
-    public ShoppingCartPage clickValueBtn(int amount) {
-        openAmountSelector().get(amount).click();
+        getConfirmBtn().click();
         return this;
     }
 
     public ShoppingCartPage selectValue(String value) {
         Select A = new Select(driver.findElement(By.xpath(SELECT_VALUE_BTN)));
         A.selectByValue(value);
+        return this;
+    }
+
+    public ShoppingCartPage clickCheckoutBtn() {
+        getCheckoutBtn().click();
         return this;
     }
 }
