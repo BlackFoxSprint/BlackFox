@@ -22,8 +22,6 @@ public class CheckoutPage extends CheckoutElements {
 
     public CheckoutPage entryStreetNumberAndName(String street) {
         getStreetNumberAndNameInput().sendKeys(street);
-        getStreetNumberAndNameInput().sendKeys(Keys.ARROW_DOWN);
-        getStreetNumberAndNameInput().sendKeys(Keys.ENTER);
         return this;
     }
 
@@ -44,6 +42,41 @@ public class CheckoutPage extends CheckoutElements {
 
     public CheckoutPage clickContinueToPaymentBtn() {
         getContinueToPaymentBtn().click();
+        return this;
+    }
+
+    public CheckoutPage entryCreditCardName(String cardName) {
+        getCreditCardNameInput().sendKeys(cardName);
+        return this;
+    }
+
+    public CheckoutPage entryCreditCardNumber(String cardNumber) {
+        getCreditCardNumberInput().sendKeys(cardNumber);
+        return this;
+    }
+
+    public CheckoutPage entryExpirationDate(String date) {
+        getCreditExpirationDateInput().sendKeys(date);
+        return this;
+    }
+
+    public CheckoutPage entryCreditCardCvv(String cvv) {
+        getCreditCardCvvInput().sendKeys(cvv);
+        return this;
+    }
+
+    public CheckoutPage clickPlaceOrderBtn() {
+        getPlaceOrderBtn().click();
+        return this;
+    }
+
+    public CheckoutPage getPaymentFormErrorTittleText() {
+        getPaymentFormErrorTittle().getText();
+        return this;
+    }
+
+    public CheckoutPage getCreditCardNumberErrorText() {
+        getCreditCardNumberError().getText();
         return this;
     }
 }

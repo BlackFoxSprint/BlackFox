@@ -1,6 +1,7 @@
 package tests;
 
 import base.AbstractBaseTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.*;
 
@@ -8,8 +9,17 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class PaymentByEnteringInvalidDataTest extends AbstractBaseTest {
 
-    @Test
-    public void checkPayment() {
+    @DataProvider(name = "testDataForPayment")
+    public Object[][] provideTestData() {
+        return new Object[][]{
+                {"/", "5355 5712 8250 5734", "05/33", "676"},
+                {"!", "4205 5012 6959 5704", "02/44", "123"},
+                {"Bob", "1201 8765 0274 7352", "06/54", "098"},
+        };
+    }
+
+    @Test(dataProvider = "testDataForPayment")
+    public void checkPayment(String userCreditCardName, String userCreditCardNumber, String userExpirationDate, String userCreditCardCvv) {
         HomePage homePage = new HomePage(driver);
         KidsPage kidsPage = new KidsPage(driver);
         ProductCardPage productCardPage = new ProductCardPage(driver);
@@ -52,8 +62,18 @@ public class PaymentByEnteringInvalidDataTest extends AbstractBaseTest {
                 .clickOklahomaStreet()
                 .entryEmail("1@a.a")
                 .entryPhoneNumber("12655555555")
-                .clickContinueToPaymentBtn();
+                .clickContinueToPaymentBtn()
+                .entryCreditCardName(userCreditCardName)
+                .entryCreditCardNumber(userCreditCardNumber)
+                .entryExpirationDate(userExpirationDate)
+                .entryCreditCardCvv(userCreditCardCvv)
+                .clickPlaceOrderBtn();
 
-
+//        if (userCreditCardNumber.equals("5355 5712 8250 5734")) {
+//            assertEquals("Something went wrong while processing your payment.", checkoutPage.getPaymentFormErrorTittleText());
+//        } else {
+//            assertEquals("Please enter a valid value", checkoutPage.getCreditCardNumberErrorText());
+//
+//        }
     }
 }
