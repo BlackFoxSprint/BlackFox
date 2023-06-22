@@ -25,7 +25,7 @@ public class ShoppingCartTest extends AbstractBaseTest {
                 .clickWomenClassicsCategoryBtn();
 
         womenPage
-                .clickCaliWedgeWomenSneakers();
+                .clickCaliWedgeMixSneakers();
 
         String selectProductName = selectProductPage.getProductTittle();
         String selectProductPrice = selectProductPage.getProductPrice();
@@ -68,9 +68,8 @@ public class ShoppingCartTest extends AbstractBaseTest {
 
         shoppingCartPage
                 .getCartProductTittle("2")
-                .clickValueBtn(1)
                 .selectValue("2");
-        sleep(5000);
+        sleep(3000);
 
         String priceFirstProductAnotherValue = shoppingCartPage.getCartProductPrice("1").replace("$", "");
         double dPriceFirstProductAnotherValue = Double.parseDouble(priceFirstProductAnotherValue);

@@ -24,7 +24,7 @@ public class ShoppingCartPage extends ShoppingCartElements {
     }
 
     public String getCartProductTotalPrice() {
-        return waitUntilElementToBeVisibleByXpath(CART_PRODUCT_TOTAL_PRICE).getText();
+        return waitUntilElementToBeVisibleByCss(CART_PRODUCT_TOTAL_PRICE).getText();
     }
 
     public ShoppingCartPage clickRemoveSecondProductBtn() {
@@ -33,7 +33,7 @@ public class ShoppingCartPage extends ShoppingCartElements {
     }
 
     public ShoppingCartPage clickConfirmBtn() {
-        waitUntilElementToBeVisibleByXpath(CONFIRM_BTN).click();
+        waitUntilElementToBeVisibleByCss(CONFIRM_BTN).click();
         return this;
     }
 
