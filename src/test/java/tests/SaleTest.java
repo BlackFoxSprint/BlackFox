@@ -24,7 +24,7 @@ public class SaleTest extends AbstractBaseTest {
         homePage
                 .clickSelectLocationCloseBtn()
                 .clickCookieCloseBtn();
-        moveCursor(homePage.getSaleCategory(), driver);
+        moveCursor(homePage.getCategory("sale"), driver);
         homePage.clickPopUpMenuSaleWomenAccessories();
 
         List<WebElement> listSalePrice = salePage.getListSalePrice();

@@ -10,15 +10,14 @@ public class MyShoppingCartElements extends AbstractBasePage {
         super(driver);
     }
 
-    protected final String PRICE_FIELD_ON_SHOPPING_CART = dataTestId("item-price-base");
-    protected final String SALE_PRICE_FIELD_ON_SHOPPING_CART = dataTestId("item-price");
-    protected final String SUBTOTAL_FIELD_ON_SHOPPING_CART = dataTestId("subtotal");
+    private final String PRICE_FIELD_ON_SHOPPING_CART = dataTestId("item-price-base");
+    private final String SALE_PRICE_FIELD_ON_SHOPPING_CART = dataTestId("item-price");
 
-    public WebElement getPriceFieldOnShoppingCart() {
+    protected WebElement getPriceFieldOnShoppingCart() {
         return waitUntilElementToBeVisibleByCss(PRICE_FIELD_ON_SHOPPING_CART);
     }
 
-    public WebElement getSalePriceFieldOnShoppingCart() {
+    protected WebElement getSalePriceFieldOnShoppingCart() {
         return waitUntilElementToBeVisibleByCss(SALE_PRICE_FIELD_ON_SHOPPING_CART);
     }
 }

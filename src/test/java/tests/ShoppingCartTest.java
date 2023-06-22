@@ -9,7 +9,7 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class ShoppingCartTest extends AbstractBaseTest {
 
-    @Test
+    @Test(invocationCount = 3)
     public void checkShoppingCart() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         WomenPage womenPage = new WomenPage(driver);
@@ -27,8 +27,8 @@ public class ShoppingCartTest extends AbstractBaseTest {
         womenPage
                 .clickCaliWedgeMixSneakers();
 
-        String selectProductName = selectProductPage.getProductTittle();
-        String selectProductPrice = selectProductPage.getProductPrice();
+        String selectProductName = selectProductPage.getTextProductTittle();
+        String selectProductPrice = selectProductPage.getTextProductPrice();
 
         productCardPage
                 .clickSizeOfShoesBtn()
@@ -36,8 +36,8 @@ public class ShoppingCartTest extends AbstractBaseTest {
                 .clickViewCart();
 
         assertEquals(selectProductName, shoppingCartPage.getNameProductFromOrder("1"));
-        assertEquals(selectProductPrice, shoppingCartPage.getCartProductPrice("1"));
-        assertEquals(selectProductPrice, shoppingCartPage.getCartProductTotalPrice());
+        assertEquals(selectProductPrice, shoppingCartPage.getTextCartProductPrice("1"));
+        assertEquals(selectProductPrice, shoppingCartPage.getTextCartProductTotalPrice());
 
         homePage
                 .moveToCategory("Men")
@@ -45,25 +45,25 @@ public class ShoppingCartTest extends AbstractBaseTest {
         menPage
                 .clickBmwMotorSportBtn();
 
-        selectProductName = selectProductPage.getProductTittle();
-        selectProductPrice = selectProductPage.getProductPrice();
+        selectProductName = selectProductPage.getTextProductTittle();
+        selectProductPrice = selectProductPage.getTextProductPrice();
 
         productCardPage
                 .selectSizeOfClothing()
                 .clickAddToCart()
                 .clickViewCart();
 
-        String priceFirstProduct = shoppingCartPage.getCartProductPrice("1").replace("$", "");
-        String priceSecondProduct = shoppingCartPage.getCartProductPrice("2").replace("$", "");
+        String priceFirstProduct = shoppingCartPage.getTextCartProductPrice("1").replace("$", "");
+        String priceSecondProduct = shoppingCartPage.getTextCartProductPrice("2").replace("$", "");
         double dPriceFirstProduct = Double.parseDouble(priceFirstProduct);
         double dPriceSecondProduct = Double.parseDouble(priceSecondProduct);
         double dSumFirstAndTwoGoods = dPriceFirstProduct + dPriceSecondProduct;
-        String cartTotal = shoppingCartPage.getCartProductTotalPrice().replace("$", "");
+        String cartTotal = shoppingCartPage.getTextCartProductTotalPrice().replace("$", "");
         double dCartTotal = Double.parseDouble(cartTotal);
 
 
         assertEquals(selectProductName, shoppingCartPage.getNameProductFromOrder("2"));
-        assertEquals(selectProductPrice, shoppingCartPage.getCartProductPrice("2"));
+        assertEquals(selectProductPrice, shoppingCartPage.getTextCartProductPrice("2"));
         assertEquals(dSumFirstAndTwoGoods, dCartTotal);
 
         shoppingCartPage
@@ -71,13 +71,13 @@ public class ShoppingCartTest extends AbstractBaseTest {
                 .selectValue("2");
         sleep(3000);
 
-        String priceFirstProductAnotherValue = shoppingCartPage.getCartProductPrice("1").replace("$", "");
+        String priceFirstProductAnotherValue = shoppingCartPage.getTextCartProductPrice("1").replace("$", "");
         double dPriceFirstProductAnotherValue = Double.parseDouble(priceFirstProductAnotherValue);
         double amountFirstProductDoubleValue = dPriceFirstProduct + dPriceFirstProduct;
 
         assertEquals(amountFirstProductDoubleValue, dPriceFirstProductAnotherValue);
 
-        String cartTotalForThreeProducts = shoppingCartPage.getCartProductTotalPrice().replace("$", "");
+        String cartTotalForThreeProducts = shoppingCartPage.getTextCartProductTotalPrice().replace("$", "");
         double dCartTotalForThreeProducts = Double.parseDouble(cartTotalForThreeProducts);
         double amountThreeProduct = amountFirstProductDoubleValue + dPriceSecondProduct;
 
