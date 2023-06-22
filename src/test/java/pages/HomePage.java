@@ -24,7 +24,7 @@ public class HomePage extends HomeElements {
     }
 
     public HomePage clickSelectLocationCloseBtn() {
-        waitUntilElementToBeClickableByXpath(SELECT_LOCATION_CLOSE_BTN).click();
+        waitUntilElementToBeClickableByCss(SELECT_LOCATION_CLOSE_BTN).click();
         return this;
     }
 
@@ -73,7 +73,7 @@ public class HomePage extends HomeElements {
     }
 
     public HomePage clickReturnHomePagePumaIcon() {
-        waitUntilElementToBeClickableByXpath(RETURN_HOME_PAGE_PUMA_ICON).click();
+        waitUntilElementToBeClickableByCss(RETURN_HOME_PAGE_PUMA_ICON).click();
         return this;
     }
 
@@ -87,7 +87,7 @@ public class HomePage extends HomeElements {
     }
 
     public HomePage clickCookieCloseBtn() {
-        waitUntilElementToBeClickableByXpath(COOKIE_CLOSE_BTN);
+        waitUntilElementToBeClickableByCss(COOKIE_CLOSE_BTN);
         return this;
     }
 
@@ -140,13 +140,13 @@ public class HomePage extends HomeElements {
         return this;
     }
 
-    public boolean elementIsNotPresent() {
+    public boolean inputFieldIsNotPresent() {
         By elementLocator = By.xpath(INPUT_FIELD_VISIBILITY);
         boolean searchFieldElementPresent = driver.findElements(elementLocator).isEmpty();
         return searchFieldElementPresent;
     }
 
-    public boolean elementIsNotPresent2() throws InterruptedException {
+    public boolean searchBarIsNotPresent() throws InterruptedException {
         sleep(1000);
         By elementLocator = By.xpath(SEARCH_BAR_VISIBILITY);
         boolean searchElementPresent = driver.findElements(elementLocator).isEmpty();

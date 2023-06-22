@@ -10,8 +10,9 @@ import pages.SpongeBobCollectionPage;
 
 public class SearchTest extends AbstractBaseTest {
 
-    @Test()
+    @Test
     public void checkSearch() throws InterruptedException {
+
         HomePage homePage = new HomePage(driver);
         SoftAssert softAssert = new SoftAssert();
         Actions actions = new Actions(driver);
@@ -24,12 +25,12 @@ public class SearchTest extends AbstractBaseTest {
         homePage.
                 clickClearBtn();
 
-        softAssert.assertTrue(homePage.elementIsNotPresent(), "element1");
+        softAssert.assertTrue(homePage.inputFieldIsNotPresent(), "element1");
 
         homePage.
                 clickCloseButtonInSearchField();
 
-        softAssert.assertTrue(homePage.elementIsNotPresent2(), "element2");
+        softAssert.assertTrue(homePage.searchBarIsNotPresent(), "element2");
 
         homePage.
                 clickSearchField();
