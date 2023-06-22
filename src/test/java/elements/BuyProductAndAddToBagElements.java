@@ -16,5 +16,8 @@ public class BuyProductAndAddToBagElements extends AbstractBasePage {
     protected final static String SHOES_BUTTON = "//label[@for='Shoes']";
     protected final static String SIZE_BUTTON =  dataTestId("size-filter-pill");
     protected final static String NUMBER_SIZE = dataTestId("6-btn");
+    protected final static String FIT_BUTTON = dataTestId("fit-filter-pill");
+    protected final static String REGULAR_BUTTON = "//label[@for='Regular']";
+    protected final static String PRODUCT_LIST = "//a[@data-test-id='product-list-item-link']";
 
 }

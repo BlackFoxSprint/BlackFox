@@ -49,6 +49,9 @@ public class TestBuyProductAndAddToBag extends AbstractBaseTest {
 
         pageBuyInSearchShoes.closeFilter();
 
-        buyProductAndAddToBagPage.clickToElementInPage();
+        buyProductAndAddToBagPage
+                .clickToFitButton()
+                .clickToRegularButton()
+                .clickToElementInPage();
     }
 }

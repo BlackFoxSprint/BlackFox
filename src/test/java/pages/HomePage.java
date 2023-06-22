@@ -4,8 +4,6 @@ import elements.HomeElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static base.CommonActions.moveCursor;
-
 public class HomePage extends HomeElements {
 
     public HomePage(WebDriver driver) {
