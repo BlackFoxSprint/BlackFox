@@ -1,6 +1,7 @@
 package tests;
 
 import base.AbstractBaseTest;
+import io.qameta.allure.Description;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.*;
@@ -11,6 +12,7 @@ import static org.testng.AssertJUnit.assertEquals;
 public class ShoppingCartTest extends AbstractBaseTest {
 
     @Test
+    @Description("/BLAC-8/ TestCase 1.Shopping cart test.")
     public void checkShoppingCart() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         WomenPage womenPage = new WomenPage(driver);
@@ -62,7 +64,6 @@ public class ShoppingCartTest extends AbstractBaseTest {
         double dSumFirstAndTwoGoods = dPriceFirstProduct + dPriceSecondProduct;
         String cartTotal = shoppingCartPage.getTextCartProductTotalPrice().replace("$", "");
         double dCartTotal = Double.parseDouble(cartTotal);
-
 
         softAssert.assertEquals(selectProductName, shoppingCartPage.getNameProductFromOrder("2"));
         softAssert.assertEquals(selectProductPrice, shoppingCartPage.getTextCartProductPrice("2"));

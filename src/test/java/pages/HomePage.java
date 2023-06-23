@@ -24,17 +24,17 @@ public class HomePage extends HomeElements {
         getSelectLocationCloseBtn().click();
         return this;
     }
-    @Step("Click women classics shoes category")
+    @Step("Click Classics Shoes Women Category")
     public HomePage clickWomenClassicsCategoryBtn() {
         getWomenClassicsCategoryBtn().click();
         return this;
     }
-    @Step("Click Boys suede category")
+    @Step("Click Boys Suede Category")
     public HomePage clickBoysSuedeCategoryBtn() {
         getBoysSuedeCategoryBtn().click();
         return this;
     }
-
+    @Step("Click Soccer Men Category")
     public HomePage clickMenSoccerShoesBtn() {
         getMenSoccerShoesBtn().click();
         return this;

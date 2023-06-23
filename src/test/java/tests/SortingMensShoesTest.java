@@ -1,6 +1,7 @@
 package tests;
 
 import base.AbstractBaseTest;
+import io.qameta.allure.Description;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -11,6 +12,7 @@ import java.util.List;
 public class SortingMensShoesTest extends AbstractBaseTest {
 
     @Test
+    @Description("/BLAC-9/ TestCase 2. Check the sorting men's shoes.")
     public void checkSortingMenShoes() {
         HomePage homePage = new HomePage(driver);
         SoftAssert softAssert = new SoftAssert();
