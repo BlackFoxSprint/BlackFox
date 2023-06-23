@@ -89,4 +89,8 @@ abstract public class AbstractBasePage {
         final String cssSelector = String.format("[data-automation-id='%s']", id);
         return cssSelector;
     }
+
+    public void waitUntiUrlToBe(String expectedURL){
+        wait.until(ExpectedConditions.urlToBe(expectedURL));
+    }
 }
