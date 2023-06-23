@@ -1,7 +1,12 @@
 package base;
 
+import io.qameta.allure.Attachment;
+import io.qameta.allure.Step;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -18,9 +23,21 @@ abstract public class AbstractBaseTest {
         driver.get("https://us.puma.com/us/en");
     }
 
+    @Step("Finish set up driver")
     @AfterMethod
-    public void closeWindow() {
+    public void after(ITestResult result) {
+        int status = result.getStatus();
+
+        if (status == ITestResult.FAILURE || status == ITestResult.SKIP) {
+            captureScreen(driver);
+        }
         driver.quit();
+    }
+
+    @Attachment(value = "Page screenshot", type = "image/png")
+    public byte[] captureScreen(WebDriver driver) {
+        System.out.println("captureScreen");
+        return (((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
     }
 
     public WebDriver getDriver() {

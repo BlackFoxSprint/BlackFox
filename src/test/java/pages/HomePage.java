@@ -1,6 +1,7 @@
 package pages;
 
 import elements.HomeElements;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -18,6 +19,7 @@ public class HomePage extends HomeElements {
         return this;
     }
 
+    @Step("Close select location pop-up")
     public HomePage clickSelectLocationCloseBtn() {
         getSelectLocationCloseBtn().click();
         return this;
@@ -48,6 +50,7 @@ public class HomePage extends HomeElements {
         return this;
     }
 
+    @Step("Move to category {category}")
     public HomePage moveToCategory(String category) {
         moveCursor(getCategory(category), driver);
         return this;
@@ -79,6 +82,7 @@ public class HomePage extends HomeElements {
         return this;
     }
 
+    @Step("Close cookie pop-up")
     public HomePage clickCookieCloseBtn() {
         getCookieCloseBtn().click();
         return this;
