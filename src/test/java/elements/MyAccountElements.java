@@ -20,7 +20,7 @@ public class MyAccountElements extends AbstractBasePage {
 
     //address book section
     private static final String ADDRESS_TITLE_FIELD = "//input[@id='address-title-input']";
-    private static final String COUNTRY_SELECT = ("//*[@id=\"puma-skip-here\"]/div/div/div/div/div[2]/div/div/form/div[1]/div[2]/div[2]/div[2]");
+    private static final String COUNTRY_SELECT = ("(//div[@class='w-full'])[3]//div[2]");
     private static final String FIRST_NAME_FIELD = "//input[@id='firstName-input']";
     private static final String LAST_NAME_FILED = "//input[@id='lastName-input']";
     private static final String ADDRESS1_FIELD = "//input[@id='address1']";

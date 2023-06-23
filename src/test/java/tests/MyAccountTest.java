@@ -9,8 +9,17 @@ import pages.RegisterPage;
 
 public class MyAccountTest extends AbstractBaseTest {
 
+    public static final String EMAIL = "maksbidzura@gmail.com";
+    public static final String PASSWORD = "&GfD5?BH68m2PLF";
+    public static final String HOME_PAGE_LINK = "https://us.puma.com/us/en";
+    public static final String MY_ACCOUNT_PAGE_LINK = "https://us.puma.com/us/en/account";
+    public static final String ALABAMA = "Alabama";
+    public static final String ADDRESS_CONTAINS = "123";
+    public static final String PASSWORD_MUST_CONTAIN = "Your password must contain at least 8 characters";
+    public static final String PREFERENCES_UPDATE = "Your preferences have been updated";
+
     @Test
-    public void checkMyaccont() throws InterruptedException {
+    public void checkMyAccount(){
 
         SoftAssert softAssert = new SoftAssert();
         HomePage homePage = new HomePage(driver);
@@ -22,33 +31,33 @@ public class MyAccountTest extends AbstractBaseTest {
                 .clickMyAccountButton();
 
         registerPage
-                .fillLoginEmail("maksbidzura@gmail.com")
-                .fillLoginPassword("&GfD5?BH68m2PLF")
+                .fillLoginEmail(EMAIL)
+                .fillLoginPassword(PASSWORD)
                 .clickLoginButtonOnLoginPage();
 
-        myAccountPage.waitUntiUrlToBe("https://us.puma.com/us/en/account");
+        myAccountPage.waitUntiUrlToBe(MY_ACCOUNT_PAGE_LINK);
         String currentUrl = getCurrentUrl();
-        softAssert.assertTrue(currentUrl.equals("https://us.puma.com/us/en/account"), "Користувач знаходиться на вірній сторінці1");
+        softAssert.assertTrue(currentUrl.equals(MY_ACCOUNT_PAGE_LINK), "Користувач знаходиться на вірній сторінці1");
 
         myAccountPage
                 .clickAccountLogoutBtn();
 
-        myAccountPage.waitUntiUrlToBe("https://us.puma.com/us/en");
+        myAccountPage.waitUntiUrlToBe(HOME_PAGE_LINK);
         currentUrl = getCurrentUrl();
-        softAssert.assertTrue(currentUrl.equals("https://us.puma.com/us/en"), "Користувач знаходиться на вірній сторінці2");
+        softAssert.assertTrue(currentUrl.equals(HOME_PAGE_LINK), "Користувач знаходиться на вірній сторінці2");
 
         homePage
                 .clickAccountButton()
                 .clickMyAccountButton();
 
         registerPage
-                .fillLoginEmail("maksbidzura@gmail.com")
-                .fillLoginPassword("&GfD5?BH68m2PLF")
+                .fillLoginEmail(EMAIL)
+                .fillLoginPassword(PASSWORD)
                 .clickLoginButtonOnLoginPage();
 
-        myAccountPage.waitUntiUrlToBe("https://us.puma.com/us/en/account");
+        myAccountPage.waitUntiUrlToBe(MY_ACCOUNT_PAGE_LINK);
         currentUrl = getCurrentUrl();
-        softAssert.assertTrue(currentUrl.equals("https://us.puma.com/us/en/account"), "Користувач знаходиться на вірній сторінці3");
+        softAssert.assertTrue(currentUrl.equals(MY_ACCOUNT_PAGE_LINK), "Користувач знаходиться на вірній сторінці3");
 
         myAccountPage
                 .clickAddNewAddress();
@@ -56,19 +65,19 @@ public class MyAccountTest extends AbstractBaseTest {
         myAccountPage
                 .fillAddressTitleField()
                 .clickCountry()
-                .fillFirstNameField()
-                .fillLastNameField()
-                .fillAddress1Field()
-                .fillAddress2Field()
-                .filltCityField()
-                .fillPostalCodeField()
-                .fillPhoneNumberField()
-                .selectStateByVisibleText("Alabama")
+                .fillFirstNameField("1234")
+                .fillLastNameField("12345")
+                .fillAddress1Field("1805 East Sky Harbor Circle South")
+                .fillAddress2Field("38")
+                .filltCityField("Regina")
+                .fillPostalCodeField("35202")
+                .fillPhoneNumberField("9542287691")
+                .selectStateByVisibleText(ALABAMA)
                 .clickSaveBtn()
                 .clickDeleteAddressBtn();
 
         String pageSource = getPageSource();
-        softAssert.assertTrue(pageSource.contains("123"), "address");
+        softAssert.assertTrue(pageSource.contains(ADDRESS_CONTAINS), "address");
 
         myAccountPage
                 .clickConfirmDeleteBtn();
@@ -82,7 +91,7 @@ public class MyAccountTest extends AbstractBaseTest {
                 .fillNewPasswordConfirmationField();
 
         pageSource = getPageSource();
-        softAssert.assertTrue(pageSource.contains("Your password must contain at least 8 characters"), "Your password");
+        softAssert.assertTrue(pageSource.contains(PASSWORD_MUST_CONTAIN), "Your password");
 
         myAccountPage
                 .clickBackToMyAccountBtn()
@@ -90,7 +99,7 @@ public class MyAccountTest extends AbstractBaseTest {
                 .clickNewsletterSubmitBtn();
 
         pageSource = getPageSource();
-        softAssert.assertTrue(pageSource.contains("Your preferences have been updated"), "Your preferences");
+        softAssert.assertTrue(pageSource.contains(PREFERENCES_UPDATE), "Your preferences");
 
         myAccountPage
                 .clickReturnToMyAccountBtn()
@@ -98,7 +107,7 @@ public class MyAccountTest extends AbstractBaseTest {
                 .clickSubmitNotificationPreferencesBtn();
 
         pageSource = getPageSource();
-        softAssert.assertTrue(pageSource.contains("Your preferences have been updated"), "Your preferences2");
+        softAssert.assertTrue(pageSource.contains(PREFERENCES_UPDATE), "Your preferences2");
 
         softAssert.assertAll();
     }

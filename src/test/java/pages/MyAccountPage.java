@@ -35,38 +35,38 @@ public class MyAccountPage extends MyAccountElements {
         return this;
     }
 
-    public MyAccountPage fillFirstNameField() {
-        getFirstNameField().sendKeys("1234");
+    public MyAccountPage fillFirstNameField(String firstName) {
+        getFirstNameField().sendKeys(firstName);
         return this;
     }
 
-    public MyAccountPage fillLastNameField() {
-        getLastNameField().sendKeys("12345");
+    public MyAccountPage fillLastNameField(String lastName) {
+        getLastNameField().sendKeys(lastName);
         return this;
     }
 
-    public MyAccountPage fillAddress1Field() {
-        getAddress1Field().sendKeys("1805 East Sky Harbor Circle South");
+    public MyAccountPage fillAddress1Field(String address) {
+        getAddress1Field().sendKeys(address);
         return this;
     }
 
-    public MyAccountPage fillAddress2Field() {
-        getAddress2Field().sendKeys("38");
+    public MyAccountPage fillAddress2Field(String address2) {
+        getAddress2Field().sendKeys(address2);
         return this;
     }
 
-    public MyAccountPage filltCityField() {
-        getCityField().sendKeys("Regina");
+    public MyAccountPage filltCityField(String city) {
+        getCityField().sendKeys(city);
         return this;
     }
 
-    public MyAccountPage fillPostalCodeField() {
-        getPostalCodeField().sendKeys("35202");
+    public MyAccountPage fillPostalCodeField(String postalCode) {
+        getPostalCodeField().sendKeys(postalCode);
         return this;
     }
 
-    public MyAccountPage fillPhoneNumberField() {
-        getPhoneNumberField().sendKeys("9542287691");
+    public MyAccountPage fillPhoneNumberField(String phoeNumber) {
+        getPhoneNumberField().sendKeys(phoeNumber);
         return this;
     }
 
