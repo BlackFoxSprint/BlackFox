@@ -27,7 +27,7 @@ public class ShoppingCartTest extends AbstractBaseTest {
                 .clickWomenClassicsCategoryBtn();
 
         womenPage
-                .clickCaliWedgeMixSneakers();
+                .clickMayzeStachShoes();
 
         String selectProductName = selectProductPage.getTextProductTittle();
         String selectProductPrice = selectProductPage.getTextProductPrice();
