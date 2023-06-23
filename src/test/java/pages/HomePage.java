@@ -24,27 +24,32 @@ public class HomePage extends HomeElements {
         getSelectLocationCloseBtn().click();
         return this;
     }
+
     @Step("Click Classics Shoes Women Category")
     public HomePage clickWomenClassicsCategoryBtn() {
         getWomenClassicsCategoryBtn().click();
         return this;
     }
+
     @Step("Click Boys Suede Category")
     public HomePage clickBoysSuedeCategoryBtn() {
         getBoysSuedeCategoryBtn().click();
         return this;
     }
+
     @Step("Click Soccer Men Category")
     public HomePage clickMenSoccerShoesBtn() {
         getMenSoccerShoesBtn().click();
         return this;
     }
 
+    @Step("Click Men Basketball Shoes Category")
     public HomePage clickMenBasketballShoesBtn() {
         getMenBasketballShoesBtn().click();
         return this;
     }
 
+    @Step("Click Men Hats Accessories Category")
     public HomePage clickMenHatsAccessoriesBtn() {
         getMenHatsAccessoriesBtn().click();
         return this;
@@ -88,26 +93,30 @@ public class HomePage extends HomeElements {
         return this;
     }
 
+    @Step("Close search button")
     public HomePage clickSearchBtn() {
         waitUntilElementToBeVisibleByXpath(SEARCH_BTN).click();
         return this;
     }
 
+    @Step("Click search field input")
     public HomePage clickSearchField() {
         waitUntilElementToBeVisibleByCss(SEARCH_FIELD).click();
         return this;
     }
 
+    @Step("Click sorting select")
     public HomePage clickSortingBtn(int i) {
         getSortingBtn().get(i).click();
         return this;
     }
 
+    @Step("Click price Low to High sorting select")
     public HomePage clickPriceLowToHigh() {
         getPriceLowToHigh().click();
         return this;
     }
-
+    @Step("Click price High to Low sorting select")
     public HomePage clickPriceHowToLow() {
         getPriceHighToLow().click();
         return this;
@@ -122,7 +131,7 @@ public class HomePage extends HomeElements {
         getClickHereToExploreCareers().click();
         return this;
     }
-  
+
     public HomePage clickClearBtn() {
         waitUntilElementToBeVisibleByCss(CLEAR_BTN).click();
         return this;
