@@ -2,6 +2,7 @@ package tests;
 
 import base.AbstractBaseTest;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pages.*;
 
 import static java.lang.Thread.sleep;
@@ -17,6 +18,7 @@ public class ShoppingCartTest extends AbstractBaseTest {
         MenPage menPage = new MenPage(driver);
         ShoppingCartPage shoppingCartPage = new ShoppingCartPage(driver);
         SelectProductPage selectProductPage = new SelectProductPage(driver);
+        SoftAssert softAssert = new SoftAssert();
 
         homePage
                 .clickSelectLocationCloseBtn()
@@ -35,9 +37,9 @@ public class ShoppingCartTest extends AbstractBaseTest {
                 .clickAddToCart()
                 .clickViewCart();
 
-        assertEquals(selectProductName, shoppingCartPage.getNameProductFromOrder("1"));
-        assertEquals(selectProductPrice, shoppingCartPage.getTextCartProductPrice("1"));
-        assertEquals(selectProductPrice, shoppingCartPage.getTextCartProductTotalPrice());
+        softAssert.assertEquals(selectProductName, shoppingCartPage.getNameProductFromOrder("1"));
+        softAssert.assertEquals(selectProductPrice, shoppingCartPage.getTextCartProductPrice("1"));
+        softAssert.assertEquals(selectProductPrice, shoppingCartPage.getTextCartProductTotalPrice());
 
         homePage
                 .moveToCategory("Men")
@@ -62,9 +64,9 @@ public class ShoppingCartTest extends AbstractBaseTest {
         double dCartTotal = Double.parseDouble(cartTotal);
 
 
-        assertEquals(selectProductName, shoppingCartPage.getNameProductFromOrder("2"));
-        assertEquals(selectProductPrice, shoppingCartPage.getTextCartProductPrice("2"));
-        assertEquals(dSumFirstAndTwoGoods, dCartTotal);
+        softAssert.assertEquals(selectProductName, shoppingCartPage.getNameProductFromOrder("2"));
+        softAssert.assertEquals(selectProductPrice, shoppingCartPage.getTextCartProductPrice("2"));
+        softAssert.assertEquals(dSumFirstAndTwoGoods, dCartTotal);
 
         shoppingCartPage
                 .getCartProductTittle("2")
@@ -81,12 +83,13 @@ public class ShoppingCartTest extends AbstractBaseTest {
         double dCartTotalForThreeProducts = Double.parseDouble(cartTotalForThreeProducts);
         double amountThreeProduct = amountFirstProductDoubleValue + dPriceSecondProduct;
 
-        assertEquals(amountThreeProduct, dCartTotalForThreeProducts);
+        softAssert.assertEquals(amountThreeProduct, dCartTotalForThreeProducts);
 
         shoppingCartPage
                 .clickRemoveSecondProductBtn()
                 .clickConfirmBtn();
 
-        assertEquals(amountFirstProductDoubleValue, dPriceFirstProductAnotherValue);
+        softAssert.assertEquals(amountFirstProductDoubleValue, dPriceFirstProductAnotherValue);
+        softAssert.assertAll();
     }
 }
