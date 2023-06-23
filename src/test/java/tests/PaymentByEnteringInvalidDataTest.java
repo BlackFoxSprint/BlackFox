@@ -1,6 +1,7 @@
 package tests;
 
 import base.AbstractBaseTest;
+import io.qameta.allure.Description;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.*;
@@ -19,7 +20,8 @@ public class PaymentByEnteringInvalidDataTest extends AbstractBaseTest {
     }
 
     @Test(dataProvider = "testDataForPayment")
-    public void checkPayment(String userCreditCardName, String userCreditCardNumber, String userExpirationDate, String userCreditCardCvv) {
+    @Description("/BLAC-14/ TestCase 3. Сheck the payment by entering invalid data.")
+    public void checkPayment(String userCreditCardName, String userCreditCardNumber, String userExpirationDate, String userCreditCardCvv) throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         KidsPage kidsPage = new KidsPage(driver);
         ProductCardPage productCardPage = new ProductCardPage(driver);
@@ -66,14 +68,13 @@ public class PaymentByEnteringInvalidDataTest extends AbstractBaseTest {
                 .entryCreditCardName(userCreditCardName)
                 .entryCreditCardNumber(userCreditCardNumber)
                 .entryExpirationDate(userExpirationDate)
-                .entryCreditCardCvv(userCreditCardCvv)
-                .clickPlaceOrderBtn();
+                .entryCreditCardCvv(userCreditCardCvv);
 
-//        if (userCreditCardNumber.equals("5355 5712 8250 5734")) {
-//            assertEquals("Something went wrong while processing your payment.", checkoutPage.getPaymentFormErrorTittleText());
-//        } else {
-//            assertEquals("Please enter a valid value", checkoutPage.getCreditCardNumberErrorText());
-//
-//        }
+        if (userCreditCardNumber.equals("5355 5712 8250 5734")) {
+            checkoutPage.clickPlaceOrderBtn();
+            assertEquals("Bad Request", checkoutPage.getPaymentFormErrorTittleText());
+        } else {
+            assertEquals("Please enter a valid value", checkoutPage.getCreditCardNumberErrorText());
+        }
     }
 }
