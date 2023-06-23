@@ -19,7 +19,7 @@ public class PaymentByEnteringInvalidDataTest extends AbstractBaseTest {
     }
 
     @Test(dataProvider = "testDataForPayment")
-    public void checkPayment(String userCreditCardName, String userCreditCardNumber, String userExpirationDate, String userCreditCardCvv) {
+    public void checkPayment(String userCreditCardName, String userCreditCardNumber, String userExpirationDate, String userCreditCardCvv) throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         KidsPage kidsPage = new KidsPage(driver);
         ProductCardPage productCardPage = new ProductCardPage(driver);
@@ -67,15 +67,13 @@ public class PaymentByEnteringInvalidDataTest extends AbstractBaseTest {
                 .entryCreditCardNumber(userCreditCardNumber)
                 .entryExpirationDate(userExpirationDate)
                 .entryCreditCardCvv(userCreditCardCvv);
-        System.out.println(checkoutPage.getPaymentFormErrorTittleText());
-//
-//        if (userCreditCardNumber.equals("5355 5712 8250 5734")) {
-//            checkoutPage.clickPlaceOrderBtn();
-//            assertEquals("Bad Request", checkoutPage.getPaymentFormErrorTittleText());
-//        }
-//        else {
-//            assertEquals("Please enter a valid value", checkoutPage.getCreditCardNumberErrorText());
-//
-//        }
+
+        if (userCreditCardNumber.equals("5355 5712 8250 5734")) {
+            checkoutPage.clickPlaceOrderBtn();
+            assertEquals("Bad Request", checkoutPage.getPaymentFormErrorTittleText());
+        }
+        else {
+            assertEquals("Please enter a valid value", checkoutPage.getCreditCardNumberErrorText());
+        }
     }
 }
