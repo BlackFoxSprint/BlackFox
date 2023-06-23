@@ -54,7 +54,7 @@ public class SortingMensShoesTest extends AbstractBaseTest {
                 .clickSortingBtn(3)
                 .clickNewestPrice();
 
-        for (WebElement newProduct : homePage.listNewProduct()) {
+        for (WebElement newProduct : homePage.getListNewProduct()) {
             assertTrue(newProduct.getText().contains("NEW"));
         }
     }

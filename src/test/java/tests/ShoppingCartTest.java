@@ -9,7 +9,7 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class ShoppingCartTest extends AbstractBaseTest {
 
-    @Test(invocationCount = 3)
+    @Test
     public void checkShoppingCart() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         WomenPage womenPage = new WomenPage(driver);

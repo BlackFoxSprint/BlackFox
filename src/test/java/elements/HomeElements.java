@@ -25,10 +25,6 @@ public class HomeElements extends AbstractBasePage {
     protected static final String POP_UP_MENU_SALE_WOMEN_ACCESSORIES = "//a[@href='/us/en/sale/womens-sale/accessories']";
 
     //account menu elements
-    public static final String RETURN_HOME_PAGE_PUMA_ICON = dataTestId("main-nav-home-link");
-    public static final String ACCOUNT_ICON_BUTTON = dataTestId("account-button");
-
-    //account menu elements
     public static final String LOGIN_BUTTON_ON_ACCOUNT_MENU = dataTestId("login-button");
     public static final String REGISTER_HERE_BUTTON = dataTestId("register-button");
     public static final String COLLABORATION_BTN = "//span[contains(text(),'Collaborations')]";
@@ -46,15 +42,12 @@ public class HomeElements extends AbstractBasePage {
     private static final String BASKETBALL_SHOES_MEN_CATEGORY = "//a[@data-link-name='Basketball']";
     private static final String HATS_ACCESSORIES_MEN_CATEGORY = "//a[@data-link-name='Hats']";
     public static final String SEARCH_FIELD = dataTestId("search-icon-nav");
-    public static final String SEARCH_FIELD = dataTestId("search-button-nav");
-    public static final String PRODUCT_SELECT_INPUT = "//select[@data-test-id='product-list-sort-select-input']//option";
  
     //search field elements
     public static final String CLEAR_BTN = dataTestId("search-flyout-form-clear");
     public static final String CLOSE_BUTTON = "(//button[@type='button'])[3]";
     public static final String INPUT_FIELD_VISIBILITY = "//div[@class='h-6 w-px bg-neutral-30']";
     public static final String SEARCH_BAR_VISIBILITY = "//div[@class='flex flex-shrink-0 sh items-center w-full h-[104px] lg:h-[120px] bg-neutral-10']";
-    public static final String SEARCH_FIELD = dataTestId("search-icon-nav");
 
     //filter panel
     private static final String AGE_GROUP = "//button[@aria-controls='ageGroup-filter-dropdown']";
@@ -135,14 +128,14 @@ public class HomeElements extends AbstractBasePage {
     }
 
     protected WebElement getMenSoccerShoesBtn() {
-        return waitUntilElementToBeClickableByCss(SOCCER_SHOES_MEN_CATEGORY);
+        return waitUntilElementToBeClickableByXpath(SOCCER_SHOES_MEN_CATEGORY);
     }
 
     protected WebElement getMenBasketballShoesBtn() {
-        return waitUntilElementToBeClickableByCss(BASKETBALL_SHOES_MEN_CATEGORY);
+        return waitUntilElementToBeClickableByXpath(BASKETBALL_SHOES_MEN_CATEGORY);
     }
 
     protected WebElement getMenHatsAccessoriesBtn() {
-        return waitUntilElementToBeClickableByCss(HATS_ACCESSORIES_MEN_CATEGORY);
+        return waitUntilElementToBeClickableByXpath(HATS_ACCESSORIES_MEN_CATEGORY);
     }
 }

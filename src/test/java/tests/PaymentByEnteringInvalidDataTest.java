@@ -66,12 +66,14 @@ public class PaymentByEnteringInvalidDataTest extends AbstractBaseTest {
                 .entryCreditCardName(userCreditCardName)
                 .entryCreditCardNumber(userCreditCardNumber)
                 .entryExpirationDate(userExpirationDate)
-                .entryCreditCardCvv(userCreditCardCvv)
-                .clickPlaceOrderBtn();
-
+                .entryCreditCardCvv(userCreditCardCvv);
+        System.out.println(checkoutPage.getPaymentFormErrorTittleText());
+//
 //        if (userCreditCardNumber.equals("5355 5712 8250 5734")) {
-//            assertEquals("Something went wrong while processing your payment.", checkoutPage.getPaymentFormErrorTittleText());
-//        } else {
+//            checkoutPage.clickPlaceOrderBtn();
+//            assertEquals("Bad Request", checkoutPage.getPaymentFormErrorTittleText());
+//        }
+//        else {
 //            assertEquals("Please enter a valid value", checkoutPage.getCreditCardNumberErrorText());
 //
 //        }

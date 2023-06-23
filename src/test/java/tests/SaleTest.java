@@ -10,8 +10,6 @@ import pages.SalePage;
 
 import java.util.List;
 
-import static base.CommonActions.moveCursor;
-
 public class SaleTest extends AbstractBaseTest {
 
     @Test
@@ -23,9 +21,9 @@ public class SaleTest extends AbstractBaseTest {
 
         homePage
                 .clickSelectLocationCloseBtn()
-                .clickCookieCloseBtn();
-        moveCursor(homePage.getCategory("sale"), driver);
-        homePage.clickPopUpMenuSaleWomenAccessories();
+                .clickCookieCloseBtn()
+                .moveToCategory("Sale")
+                .clickPopUpMenuSaleWomenAccessories();
 
         List<WebElement> listSalePrice = salePage.getListSalePrice();
         List<WebElement> listPrice = salePage.getListPrice();
@@ -59,4 +57,3 @@ public class SaleTest extends AbstractBaseTest {
         softAssert.assertAll();
     }
 }
-
