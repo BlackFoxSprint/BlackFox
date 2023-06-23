@@ -1,6 +1,7 @@
 package pages;
 
 import elements.HomeElements;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -18,37 +19,43 @@ public class HomePage extends HomeElements {
         return this;
     }
 
+    @Step("Close select location pop-up")
     public HomePage clickSelectLocationCloseBtn() {
-        waitUntilElementToBeClickableByCss(SELECT_LOCATION_CLOSE_BTN).click();
         getSelectLocationCloseBtn().click();
         return this;
     }
 
+    @Step("Click Classics Shoes Women Category")
     public HomePage clickWomenClassicsCategoryBtn() {
         getWomenClassicsCategoryBtn().click();
         return this;
     }
 
+    @Step("Click Boys Suede Category")
     public HomePage clickBoysSuedeCategoryBtn() {
         getBoysSuedeCategoryBtn().click();
         return this;
     }
 
+    @Step("Click Soccer Men Category")
     public HomePage clickMenSoccerShoesBtn() {
         getMenSoccerShoesBtn().click();
         return this;
     }
 
+    @Step("Click Men Basketball Shoes Category")
     public HomePage clickMenBasketballShoesBtn() {
         getMenBasketballShoesBtn().click();
         return this;
     }
 
+    @Step("Click Men Hats Accessories Category")
     public HomePage clickMenHatsAccessoriesBtn() {
         getMenHatsAccessoriesBtn().click();
         return this;
     }
 
+    @Step("Move to category {category}")
     public HomePage moveToCategory(String category) {
         moveCursor(getCategory(category), driver);
         return this;
@@ -80,31 +87,36 @@ public class HomePage extends HomeElements {
         return this;
     }
 
+    @Step("Close cookie pop-up")
     public HomePage clickCookieCloseBtn() {
         getCookieCloseBtn().click();
         return this;
     }
 
+    @Step("Close search button")
     public HomePage clickSearchBtn() {
         waitUntilElementToBeVisibleByXpath(SEARCH_BTN).click();
         return this;
     }
 
+    @Step("Click search field input")
     public HomePage clickSearchField() {
         waitUntilElementToBeVisibleByCss(SEARCH_FIELD).click();
         return this;
     }
 
+    @Step("Click sorting select")
     public HomePage clickSortingBtn(int i) {
         getSortingBtn().get(i).click();
         return this;
     }
 
+    @Step("Click price Low to High sorting select")
     public HomePage clickPriceLowToHigh() {
         getPriceLowToHigh().click();
         return this;
     }
-
+    @Step("Click price High to Low sorting select")
     public HomePage clickPriceHowToLow() {
         getPriceHighToLow().click();
         return this;
@@ -119,7 +131,7 @@ public class HomePage extends HomeElements {
         getClickHereToExploreCareers().click();
         return this;
     }
-  
+
     public HomePage clickClearBtn() {
         waitUntilElementToBeVisibleByCss(CLEAR_BTN).click();
         return this;

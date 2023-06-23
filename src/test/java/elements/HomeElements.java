@@ -42,14 +42,13 @@ public class HomeElements extends AbstractBasePage {
     private static final String PRODUCT_SELECT_INPUT = "//select[@data-test-id='product-list-sort-select-input']//option";
     private static final String BASKETBALL_SHOES_MEN_CATEGORY = "//a[@data-link-name='Basketball']";
     private static final String HATS_ACCESSORIES_MEN_CATEGORY = "//a[@data-link-name='Hats']";
-    public static final String SEARCH_FIELD = dataTestId("search-button-nav");
- 
+    public static final String SEARCH_FIELD = dataTestId("search-icon-nav");
+
     //search field elements
     public static final String CLEAR_BTN = dataTestId("search-flyout-form-clear");
     public static final String CLOSE_BUTTON = "(//button[@type='button'])[3]";
     public static final String INPUT_FIELD_VISIBILITY = "//div[@class='h-6 w-px bg-neutral-30']";
     public static final String SEARCH_BAR_VISIBILITY = "//div[@class='flex flex-shrink-0 sh items-center w-full h-[104px] lg:h-[120px] bg-neutral-10']";
-//    public static final String SEARCH_FIELD = dataTestId("search-icon-nav");
 
     //filter panel
     private static final String AGE_GROUP = "//button[@aria-controls='ageGroup-filter-dropdown']";
@@ -136,14 +135,14 @@ public class HomeElements extends AbstractBasePage {
     }
 
     protected WebElement getMenSoccerShoesBtn() {
-        return waitUntilElementToBeClickableByCss(SOCCER_SHOES_MEN_CATEGORY);
+        return waitUntilElementToBeClickableByXpath(SOCCER_SHOES_MEN_CATEGORY);
     }
 
     protected WebElement getMenBasketballShoesBtn() {
-        return waitUntilElementToBeClickableByCss(BASKETBALL_SHOES_MEN_CATEGORY);
+        return waitUntilElementToBeClickableByXpath(BASKETBALL_SHOES_MEN_CATEGORY);
     }
 
     protected WebElement getMenHatsAccessoriesBtn() {
-        return waitUntilElementToBeClickableByCss(HATS_ACCESSORIES_MEN_CATEGORY);
+        return waitUntilElementToBeClickableByXpath(HATS_ACCESSORIES_MEN_CATEGORY);
     }
 }

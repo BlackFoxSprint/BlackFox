@@ -70,13 +70,11 @@ public class CheckoutPage extends CheckoutElements {
         return this;
     }
 
-    public CheckoutPage getPaymentFormErrorTittleText() {
-        getPaymentFormErrorTittle().getText();
-        return this;
+    public String getPaymentFormErrorTittleText() {
+        return getPaymentFormErrorTittle().getText();
     }
 
-    public CheckoutPage getCreditCardNumberErrorText() {
-        getCreditCardNumberError().getText();
-        return this;
+    public String getCreditCardNumberErrorText() {
+       return getCreditCardNumberError().getText();
     }
 }
