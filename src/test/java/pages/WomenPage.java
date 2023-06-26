@@ -9,8 +9,8 @@ public class WomenPage extends WomenElements {
         super(driver);
     }
 
-    public WomenPage clickCaliWedgeMixSneakers() {
-        getCaliWedgeMixSneakersBtn().click();
+    public WomenPage clickMayzeStachShoes() {
+        getMayzeStackShoesBtn().click();
         return this;
     }
 }

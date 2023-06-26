@@ -2,12 +2,12 @@ package tests;
 
 import base.AbstractBaseTest;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.SpongeBobCollectionPage;
-import org.openqa.selenium.interactions.Actions;
-import static base.CommonActions.moveCursor;
 
+import static base.CommonActions.moveCursor;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class SpongeBobTest extends AbstractBaseTest {

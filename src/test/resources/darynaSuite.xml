@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Daryna Suite">
+    <test name="Daryna Tests">
+        <classes>
+            <class name="tests.PaymentByEnteringInvalidDataTest"/>
+            <class name="tests.ShoppingCartTest"/>
+            <class name="tests.SortingMensShoesTest"/>
+        </classes>
+    </test>
+</suite>
