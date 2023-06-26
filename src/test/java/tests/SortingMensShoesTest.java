@@ -1,4 +1,4 @@
-package tests;
+package Tests;
 
 import base.AbstractBaseTest;
 import io.qameta.allure.Description;
@@ -57,6 +57,7 @@ public class SortingMensShoesTest extends AbstractBaseTest {
                 .clickNewestPrice();
 
         for (WebElement newProduct : homePage.getListNewProduct()) {
+            assertTrue(newProduct.getText().contains("NEW"));
             softAssert.assertTrue(newProduct.getText().contains("NEW"));
             softAssert.assertAll();
         }

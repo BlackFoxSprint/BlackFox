@@ -34,7 +34,6 @@ public class HomePage extends HomeElements {
     @Step("Click Boys Suede Category")
     public HomePage clickBoysSuedeCategoryBtn() {
         getBoysSuedeCategoryBtn().click();
-        getWomenClassicsCategoryBtn().click();
         return this;
     }
 
@@ -90,7 +89,6 @@ public class HomePage extends HomeElements {
 
     @Step("Close cookie pop-up")
     public HomePage clickCookieCloseBtn() {
-        getCookieCloseBtn().click();
         getCookieCloseBtn().click();
         return this;
     }

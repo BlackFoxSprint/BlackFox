@@ -1,6 +1,7 @@
 package pages;
 
 import elements.CheckoutElements;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class CheckoutPage extends CheckoutElements {
@@ -69,13 +70,11 @@ public class CheckoutPage extends CheckoutElements {
         return this;
     }
 
-    public CheckoutPage getPaymentFormErrorTittleText() {
-        getPaymentFormErrorTittle().getText();
-        return this;
+    public String getPaymentFormErrorTittleText() {
+        return getPaymentFormErrorTittle().getText();
     }
 
-    public CheckoutPage getCreditCardNumberErrorText() {
-        getCreditCardNumberError().getText();
-        return this;
+    public String getCreditCardNumberErrorText() {
+       return getCreditCardNumberError().getText();
     }
 }
