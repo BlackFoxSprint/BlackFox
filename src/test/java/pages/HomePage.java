@@ -164,4 +164,9 @@ public class HomePage extends HomeElements {
         getLittleKidsAgeGroup().click();
         return this;
     }
+
+    public HomePage clickMyAccountButton() {
+        getMyAccountButton().click();
+        return this;
+    }
 }

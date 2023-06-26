@@ -20,6 +20,7 @@ public class RegistrationTest extends AbstractBaseTest {
 
     @Test(dataProvider = "testData", description = "1-15 Steps Registration")
     public void checkRegistration1(String userFirstName, String userLastName, String userEmail, String userPassword, boolean shouldClickRegister) {
+
         HomePage homePage = new HomePage(driver);
         RegisterPage registerPage = new RegisterPage(driver);
         SoftAssert softAssert = new SoftAssert();
@@ -92,6 +93,7 @@ public class RegistrationTest extends AbstractBaseTest {
 
     @Test(description = "35-54 Steps Privacy Policy")
     public void checkConditions() {
+
         HomePage homePage = new HomePage(driver);
         RegisterPage registerPage = new RegisterPage(driver);
         SoftAssert softAssert = new SoftAssert();
@@ -122,6 +124,7 @@ public class RegistrationTest extends AbstractBaseTest {
 
     @Test(description = "55-60 Steps Forgot Password Send Email")
     public void checkSendEmail() {
+
         HomePage homePage = new HomePage(driver);
         RegisterPage registerPage = new RegisterPage(driver);
         SoftAssert softAssert = new SoftAssert();
@@ -151,6 +154,7 @@ public class RegistrationTest extends AbstractBaseTest {
 
     @Test(dataProvider = "loginData", description = "61-70 Steps Login")
     public void checkLogin(String userEmail, String userPassword, boolean shouldClickRegister) {
+
         HomePage homePage = new HomePage(driver);
         RegisterPage registerPage = new RegisterPage(driver);
         SoftAssert softAssert = new SoftAssert();
