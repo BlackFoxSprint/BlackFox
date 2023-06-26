@@ -26,7 +26,6 @@ public class HomeElements extends AbstractBasePage {
     protected final static String CLOSE_COOKIE_OFF = "//button[@data-test-id='newsletter-sign-up-form-button']";
     protected final static String CLOSE_COOKIE_EMAIl = "//button[@data-test-id='sign-up-form-close-button']";
     protected static final String POP_UP_MENU_SALE_WOMEN_ACCESSORIES = "//a[@href='/us/en/sale/womens-sale/accessories']";
-    //homepage elements
     public static final String SPORT_BTN = "//span[text()='Sport']";
 
     //account menu elements
@@ -48,7 +47,7 @@ public class HomeElements extends AbstractBasePage {
     private static final String HATS_ACCESSORIES_MEN_CATEGORY = "//a[@data-link-name='Hats']";
     public static final String SEARCH_FIELD = dataTestId("search-icon-nav");
 
-   //search field elements
+    //search field elements
     public static final String CLEAR_BTN = dataTestId("search-flyout-form-clear");
     public static final String CLOSE_BUTTON = "(//button[@type='button'])[3]";
     public static final String INPUT_FIELD_VISIBILITY = "//div[@class='h-6 w-px bg-neutral-30']";
@@ -65,9 +64,11 @@ public class HomeElements extends AbstractBasePage {
     protected WebElement getPriceHighToLow() {
         return waitUntilElementToBeVisibleByXpath(PRICE_HIGH_TO_LOW_SORTING);
     }
+
     public WebElement getClickHereToExploreCareers() {
         return waitUntilElementToBeVisibleByXpath(CLICK_HERE_TO_EXPLORE_CAREERS);
     }
+
     protected WebElement getNewestPrice() {
         return waitUntilElementToBeVisibleByXpath(NEWEST_PRICE_SORTING);
     }
@@ -133,14 +134,14 @@ public class HomeElements extends AbstractBasePage {
     }
 
     protected WebElement getMenSoccerShoesBtn() {
-        return waitUntilElementToBeClickableByCss(SOCCER_SHOES_MEN_CATEGORY);
+        return waitUntilElementToBeClickableByXpath(SOCCER_SHOES_MEN_CATEGORY);
     }
 
     protected WebElement getMenBasketballShoesBtn() {
-        return waitUntilElementToBeClickableByCss(BASKETBALL_SHOES_MEN_CATEGORY);
+        return waitUntilElementToBeClickableByXpath(BASKETBALL_SHOES_MEN_CATEGORY);
     }
 
     protected WebElement getMenHatsAccessoriesBtn() {
-        return waitUntilElementToBeClickableByCss(HATS_ACCESSORIES_MEN_CATEGORY);
+        return waitUntilElementToBeClickableByXpath(HATS_ACCESSORIES_MEN_CATEGORY);
     }
 }

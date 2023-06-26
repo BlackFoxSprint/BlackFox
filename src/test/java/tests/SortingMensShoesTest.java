@@ -1,19 +1,21 @@
 package tests;
 
 import base.AbstractBaseTest;
+import io.qameta.allure.Description;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pages.HomePage;
 
 import java.util.List;
 
-import static org.testng.AssertJUnit.assertTrue;
-
 public class SortingMensShoesTest extends AbstractBaseTest {
-  
+
     @Test
+    @Description("/BLAC-9/ TestCase 2. Check the sorting men's shoes.")
     public void checkSortingMenShoes() {
         HomePage homePage = new HomePage(driver);
+        SoftAssert softAssert = new SoftAssert();
 
         homePage
                 .clickSelectLocationCloseBtn()
@@ -29,9 +31,9 @@ public class SortingMensShoesTest extends AbstractBaseTest {
             double priceFirst = Double.parseDouble(listPrice.get(i).getText().replace("$", ""));
             double priceSecond = Double.parseDouble(listPrice.get(i + 1).getText().replace("$", ""));
 
-            assertTrue(priceFirst <= priceSecond);
+            softAssert.assertTrue(priceFirst <= priceSecond);
         }
-      
+
         homePage
                 .moveToCategory("Men")
                 .clickMenBasketballShoesBtn()
@@ -45,9 +47,9 @@ public class SortingMensShoesTest extends AbstractBaseTest {
                     replace("$", "").replace(",", ""));
             double priceSecond = Double.parseDouble(newListPrice.get(i + 1).getText().replace("$", ""));
 
-            assertTrue(priceFirst >= priceSecond);
+            softAssert.assertTrue(priceFirst >= priceSecond);
         }
-      
+
         homePage
                 .moveToCategory("Men")
                 .clickMenHatsAccessoriesBtn()
@@ -55,7 +57,8 @@ public class SortingMensShoesTest extends AbstractBaseTest {
                 .clickNewestPrice();
 
         for (WebElement newProduct : homePage.getListNewProduct()) {
-            assertTrue(newProduct.getText().contains("NEW"));
+            softAssert.assertTrue(newProduct.getText().contains("NEW"));
+            softAssert.assertAll();
         }
     }
 }

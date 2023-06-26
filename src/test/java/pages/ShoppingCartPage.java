@@ -37,10 +37,10 @@ public class ShoppingCartPage extends ShoppingCartElements {
         return this;
     }
 
-    public ShoppingCartPage clickValueBtn(int amount) {
-        openAmountSelector().get(amount).click();
-        return this;
-    }
+//    public ShoppingCartPage clickValueBtn(int amount) {
+//        openAmountSelector().get(amount).click();
+//        return this;
+//    }
 
     public ShoppingCartPage selectValue(String value) {
         Select A = new Select(driver.findElement(By.xpath(SELECT_VALUE_BTN)));

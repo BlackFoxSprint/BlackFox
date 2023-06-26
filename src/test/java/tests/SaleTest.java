@@ -23,6 +23,9 @@ public class SaleTest extends AbstractBaseTest {
 
         homePage
                 .clickSelectLocationCloseBtn()
+                .clickCookieCloseBtn()
+                .moveToCategory("Sale")
+                .clickPopUpMenuSaleWomenAccessories()
                 .clickCookieCloseBtn();
         moveCursor(homePage.getCategory("sale"), driver);
         homePage.clickPopUpMenuSaleWomenAccessories();
@@ -59,4 +62,3 @@ public class SaleTest extends AbstractBaseTest {
         softAssert.assertAll();
     }
 }
-

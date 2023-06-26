@@ -1,7 +1,6 @@
 package pages;
 
 import elements.CheckoutElements;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class CheckoutPage extends CheckoutElements {
