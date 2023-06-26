@@ -22,7 +22,7 @@ public class MyAccountElements extends AbstractBasePage {
     private static final String ADDRESS_TITLE_FIELD = "//input[@id='address-title-input']";
     private static final String COUNTRY_SELECT = ("(//div[@class='w-full'])[3]//div[2]");
     private static final String FIRST_NAME_FIELD = "//input[@id='firstName-input']";
-    private static final String LAST_NAME_FILED = "//input[@id='lastName-input']";
+    private static final String LAST_NAME_FIELD = "//input[@id='lastName-input']";
     private static final String ADDRESS1_FIELD = "//input[@id='address1']";
     private static final String ADDRESS2_FIELD = "//input[@id='address2-input']";
     private static final String CITY_FIELD = "//input[@id='city-input']";
@@ -65,7 +65,7 @@ public class MyAccountElements extends AbstractBasePage {
     }
 
     protected WebElement getLastNameField() {
-        return waitUntilElementToBeClickableByXpath(LAST_NAME_FILED);
+        return waitUntilElementToBeClickableByXpath(LAST_NAME_FIELD);
     }
 
     protected WebElement getAddress1Field() {
