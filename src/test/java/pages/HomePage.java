@@ -19,7 +19,6 @@ public class HomePage extends HomeElements {
     }
 
     public HomePage clickSelectLocationCloseBtn() {
-        waitUntilElementToBeClickableByCss(SELECT_LOCATION_CLOSE_BTN).click();
         getSelectLocationCloseBtn().click();
         return this;
     }

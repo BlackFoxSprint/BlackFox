@@ -10,77 +10,77 @@ public class SportCategoryPage extends SportCategoryElements {
     }
 
     public SportCategoryPage clickTeamBtn() {
-        waitUntilElementToBeClickableByXpath(TEAM_SELECT_BTN).click();
+        getTeamSelectBtn().click();
         return this;
     }
 
     public SportCategoryPage clickBmwMotorSportBtn() {
-        waitUntilElementToBeClickableByXpath(BMW_MOTORSPORT_CHECKBOX).click();
+        getBMWMotorsportCheckBox().click();
         return this;
     }
 
     public SportCategoryPage clickFilterBtn() {
-        waitUntilElementToBeClickableByXpath(FILTER_BTN).click();
+        getFilterBtnElement().click();
         return this;
     }
 
     public SportCategoryPage closeDiscount() {
-        waitUntilElementToBeClickableByXpath(GET_20_OFF).click();
+        get20_OffCloseBtn().click();
         return this;
     }
 
     public SportCategoryPage closeFilter() {
-        waitUntilElementToBeClickableByCss(CLOSE_FILTER_BTN).click();
+        getCloseFilterBtn().click();
         return this;
     }
 
     public SportCategoryPage clickGenderBtn() {
-        waitUntilElementToBeClickableByXpath(GENDER_BTN).click();
+        getGenderBtn().click();
         return this;
     }
 
     public SportCategoryPage chooseMenCheckbox () {
-        waitUntilElementToBeClickableByXpath(MEN_CHECKBOX).click();
+        getMenCheckBox().click();
         return this;
     }
 
     public SportCategoryPage clickCategoryBtn() {
-        waitUntilElementToBeClickableByXpath(CATEGORY_BTN).click();
+        getCategoryBtn().click();
         return this;
     }
 
     public SportCategoryPage clickClothingBtn() {
-        waitUntilElementToBeClickableByXpath(CLOTHING_CHECKBOX).click();
+        getClothingElement().click();
         return this;
     }
 
     public SportCategoryPage closeGenderBtn() {
-        waitUntilElementToBeClickableByXpath(CLOSE_GENDER_BTN).click();
+        getGenderBtn().click();
         return this;
     }
 
     public SportCategoryPage clickPriceBtn() {
-        waitUntilElementToBeClickableByXpath(PRICE_BTN).click();
-        return this;
-    }
-
-    public SportCategoryPage choosePrice50_100() {
-        waitUntilElementToBeClickableByXpath(PRICE_50_100).click();
+        getPriceElement().click();
         return this;
     }
 
     public SportCategoryPage clickColorBtn() {
-        waitUntilElementToBeClickableByXpath(COLOR_BTN).click();
+        colorBtnElement().click();
         return this;
     }
 
     public SportCategoryPage clickBlackColorBtn() {
-        waitUntilElementToBeClickableByCss(BLACK_COLOR_BTN).click();
+        getBlackColorBtn().click();
         return this;
     }
 
     public SportCategoryPage clickListNameItemsBtn() {
-        waitUntilElementToBeClickableByXpath(MOTORSPORT_NAME).click();
+        getListItemsName().click();
+        return this;
+    }
+
+    public SportCategoryPage clickPriceFromTo(int first, int second) {
+        getPriceFromToElement(first,second).click();
         return this;
     }
 }

@@ -1,4 +1,4 @@
-package Tests;
+package tests;
 
 import base.AbstractBaseTest;
 import org.openqa.selenium.WebElement;
@@ -16,6 +16,11 @@ public class AllCategoriesTest extends AbstractBaseTest {
 
         HomePage homePage = new HomePage(driver);
         SportCategoryPage productPage = new SportCategoryPage(driver);
+
+        int firstPrice=50, secondPrice=100;
+//                Please, use only these digit pairs:
+//        0-25, 25-50, 50-100, 100-150, 150-200,
+//              200-9999(it means the price is $200 and more).
 
         homePage
                 .clickSelectLocationCloseBtn()
@@ -41,7 +46,7 @@ public class AllCategoriesTest extends AbstractBaseTest {
                 .closeGenderBtn()
                 .clickCategoryBtn();
 
-        scrollToElement(productPage.clothingElement(), driver);
+        scrollToElement(productPage.getClothingElement(), driver);
 
         productPage
                 .clickClothingBtn()
@@ -58,19 +63,20 @@ public class AllCategoriesTest extends AbstractBaseTest {
         productPage
                 .clickPriceBtn();
 
-        scrollToElement(productPage.priceElement(), driver);
+        scrollToElement(productPage.getPriceElement(), driver);
 
         productPage
-                .choosePrice50_100()
-                .closeFilter();
+                .clickPriceFromTo(firstPrice,secondPrice);
+
+        productPage.closeFilter();
 
         for (WebElement x : productPage.listSalePriceElements()) {
             double c = Double.valueOf(x.getText().replace("$", ""));
-            assertTrue(c >= 50 && c <= 100);
+            assertTrue(c >= firstPrice && c <= secondPrice);
         }
         for (WebElement x : productPage.listFullPriceElements()) {
             double c = Double.valueOf(x.getText().replace("$", ""));
-            assertTrue(c >= 50 && c <= 100);
+            assertTrue(c >= firstPrice && c <= secondPrice);
         }
 
         productPage
