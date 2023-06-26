@@ -89,11 +89,4 @@ abstract public class AbstractBasePage {
         final String cssSelector = String.format("[data-automation-id='%s']", id);
         return cssSelector;
     }
-
-    public static void main(String[] args) {
-        String str1="ddd",str2="333";
-        int digit1=111, digit2=222;
-        String x=String.format("str1- %s. digit- %d. the str2- %s \n digit2 =%d",str1,digit2,str2,digit1);
-        System.out.println(x);
-    }
 }
