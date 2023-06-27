@@ -7,6 +7,7 @@ import pages.HomePage;
 import pages.SportCategoryPage;
 
 import static base.CommonActions.*;
+import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class AllCategoriesTest extends AbstractBaseTest {
@@ -17,10 +18,10 @@ public class AllCategoriesTest extends AbstractBaseTest {
         HomePage homePage = new HomePage(driver);
         SportCategoryPage productPage = new SportCategoryPage(driver);
 
-        int firstPrice=50, secondPrice=100;
+        int firstPrice = 50, secondPrice = 100;
 //                Please, use only these digit pairs:
 //        0-25, 25-50, 50-100, 100-150, 150-200,
-//              200-9999(it means the price is $200 and more).
+//              200-9999(it means the price is $200 and more)
 
         homePage
                 .clickSelectLocationCloseBtn()
@@ -66,16 +67,16 @@ public class AllCategoriesTest extends AbstractBaseTest {
         scrollToElement(productPage.getPriceElement(), driver);
 
         productPage
-                .clickPriceFromTo(firstPrice,secondPrice);
+                .clickPriceFromTo(firstPrice, secondPrice);
 
         productPage.closeFilter();
 
         for (WebElement x : productPage.listSalePriceElements()) {
-            double c = Double.valueOf(x.getText().replace("$", ""));
+            double c = Double.parseDouble(x.getText().replace("$", ""));
             assertTrue(c >= firstPrice && c <= secondPrice);
         }
         for (WebElement x : productPage.listFullPriceElements()) {
-            double c = Double.valueOf(x.getText().replace("$", ""));
+            double c = Double.parseDouble(x.getText().replace("$", ""));
             assertTrue(c >= firstPrice && c <= secondPrice);
         }
 
@@ -94,6 +95,6 @@ public class AllCategoriesTest extends AbstractBaseTest {
                 .closeFilter()
                 .clickListNameItemsBtn();
 
-        assertTrue(productPage.describeColorElement().getText().contains("Black"));
+        assertEquals("Puma Black", productPage.describeColorElement().getText());
     }
 }
