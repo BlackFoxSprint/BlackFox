@@ -21,6 +21,7 @@ public class AllCategoriesTest extends AbstractBaseTest {
         int firstPrice = 50, secondPrice = 100;
 //                Please, use only these digit pairs:
 //        0-25, 25-50, 50-100, 100-150, 150-200,
+
 //              200-9999(it means the price is $200 and more);
 
         homePage
