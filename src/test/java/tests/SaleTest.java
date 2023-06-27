@@ -10,6 +10,8 @@ import pages.SalePage;
 
 import java.util.List;
 
+import static base.CommonActions.moveCursor;
+
 public class SaleTest extends AbstractBaseTest {
 
     @Test

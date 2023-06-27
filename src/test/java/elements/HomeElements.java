@@ -22,7 +22,13 @@ public class HomeElements extends AbstractBasePage {
     protected static final String SELECT_LOCATION_CLOSE_BTN = dataTestId("close-btn");
     protected static final String COOKIE_CLOSE_BTN = dataTestId("cookie-banner-close-btn");
     private static final String CLICK_HERE_TO_EXPLORE_CAREERS = "//section//a[text() = 'CLICK HERE']";
+    protected final static String CLOSE_POP_UP = "//button[@data-test-id='close-btn']";
+    protected final static String CLOSE_COOKIE_OFF = "//button[@data-test-id='newsletter-sign-up-form-button']";
+    protected final static String CLOSE_COOKIE_EMAIl = "//button[@data-test-id='sign-up-form-close-button']";
     protected static final String POP_UP_MENU_SALE_WOMEN_ACCESSORIES = "//a[@href='/us/en/sale/womens-sale/accessories']";
+  
+    //homepage elements
+    public static final String SPORT_BTN = "//span[text()='Sport']";
 
     //account menu elements
     public static final String LOGIN_BUTTON_ON_ACCOUNT_MENU = dataTestId("login-button");

@@ -93,6 +93,11 @@ public class HomePage extends HomeElements {
         return this;
     }
 
+    public HomePage clickSportBtn() {
+        waitUntilElementToBeClickableByXpath(SPORT_BTN).click();
+        return this;
+    }
+
     @Step("Close search button")
     public HomePage clickSearchBtn() {
         waitUntilElementToBeVisibleByXpath(SEARCH_BTN).click();

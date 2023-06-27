@@ -23,16 +23,16 @@ abstract public class AbstractBaseTest {
         driver.get("https://us.puma.com/us/en");
     }
 
-    @Step("Finish set up driver")
-    @AfterMethod
-    public void after(ITestResult result) {
-        int status = result.getStatus();
-
-        if (status == ITestResult.FAILURE || status == ITestResult.SKIP) {
-            captureScreen(driver);
-        }
-        driver.quit();
-    }
+//    @Step("Finish set up driver")
+//    @AfterMethod
+//    public void after(ITestResult result) {
+//        int status = result.getStatus();
+//
+//        if (status == ITestResult.FAILURE || status == ITestResult.SKIP) {
+//            captureScreen(driver);
+//        }
+//        driver.quit();
+//    }
 
     @Attachment(value = "Page screenshot", type = "image/png")
     public byte[] captureScreen(WebDriver driver) {
